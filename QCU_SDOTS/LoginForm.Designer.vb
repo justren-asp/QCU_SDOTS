@@ -228,6 +228,7 @@ Partial Class LoginForm
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.panelBanner)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "LoginForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
