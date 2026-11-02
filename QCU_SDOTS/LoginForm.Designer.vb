@@ -195,11 +195,11 @@ Partial Class LoginForm
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label6.Location = New System.Drawing.Point(80, 441)
+        Me.Label6.Location = New System.Drawing.Point(70, 441)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(266, 13)
+        Me.Label6.Size = New System.Drawing.Size(291, 13)
         Me.Label6.TabIndex = 10
-        Me.Label6.Text = "AUTHORIZED DISCIPLINE OFFICERS & ADMIN ONLY"
+        Me.Label6.Text = "AUTHORIZED DISCIPLINE OFFICERS AND ADMIN ONLY"
         '
         'Panel1
         '
