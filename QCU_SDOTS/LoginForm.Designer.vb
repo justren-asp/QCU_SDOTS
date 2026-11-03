@@ -34,8 +34,8 @@ Partial Class LoginForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.chkRemember = New System.Windows.Forms.CheckBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.chkShowPassword = New System.Windows.Forms.CheckBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -157,24 +157,24 @@ Partial Class LoginForm
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Password"
         '
-        'TextBox1
+        'txtPassword
         '
-        Me.TextBox1.Location = New System.Drawing.Point(60, 270)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(310, 20)
-        Me.TextBox1.TabIndex = 7
-        Me.TextBox1.UseSystemPasswordChar = True
+        Me.txtPassword.Location = New System.Drawing.Point(60, 270)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(310, 20)
+        Me.txtPassword.TabIndex = 7
+        Me.txtPassword.UseSystemPasswordChar = True
         '
-        'chkRemember
+        'chkShowPassword
         '
-        Me.chkRemember.AutoSize = True
-        Me.chkRemember.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkRemember.Location = New System.Drawing.Point(60, 310)
-        Me.chkRemember.Name = "chkRemember"
-        Me.chkRemember.Size = New System.Drawing.Size(224, 17)
-        Me.chkRemember.TabIndex = 8
-        Me.chkRemember.Text = "Remember credentials on this machine"
-        Me.chkRemember.UseVisualStyleBackColor = True
+        Me.chkShowPassword.AutoSize = True
+        Me.chkShowPassword.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowPassword.Location = New System.Drawing.Point(60, 310)
+        Me.chkShowPassword.Name = "chkShowPassword"
+        Me.chkShowPassword.Size = New System.Drawing.Size(224, 17)
+        Me.chkShowPassword.TabIndex = 8
+        Me.chkShowPassword.Text = "Remember credentials on this machine"
+        Me.chkShowPassword.UseVisualStyleBackColor = True
         '
         'btnLogin
         '
@@ -218,8 +218,8 @@ Partial Class LoginForm
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.chkRemember)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.chkShowPassword)
+        Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.Label4)
@@ -251,8 +251,8 @@ Partial Class LoginForm
     Friend WithEvents Label4 As Label
     Friend WithEvents txtUsername As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents chkRemember As CheckBox
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents chkShowPassword As CheckBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel1 As Panel
