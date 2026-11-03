@@ -65,7 +65,4 @@ Public Class LoginForm
         End If
     End Sub
 
-    Private Sub chkRemember_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
-
-    End Sub
 End Class

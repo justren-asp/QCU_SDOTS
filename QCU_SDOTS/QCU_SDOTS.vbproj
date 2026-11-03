@@ -157,6 +157,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UcLogOffense.Designer.vb">
+      <DependentUpon>UcLogOffense.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UcLogOffense.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="LoginForm.resx">
@@ -170,6 +176,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcLogOffense.resx">
+      <DependentUpon>UcLogOffense.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

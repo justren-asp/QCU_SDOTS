@@ -30,9 +30,11 @@ Partial Class MainDashboardForm
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnLogOffenseSidebar = New System.Windows.Forms.Button()
+        Me.btnDashboardSidebar = New System.Windows.Forms.Button()
         Me.panelHeader = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.panelMainContent = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -62,8 +64,10 @@ Partial Class MainDashboardForm
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblTotalInfractions = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.panelSidebar.SuspendLayout()
         Me.panelHeader.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.panelMainContent.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -83,8 +87,8 @@ Partial Class MainDashboardForm
         Me.panelSidebar.Controls.Add(Me.Button5)
         Me.panelSidebar.Controls.Add(Me.Button4)
         Me.panelSidebar.Controls.Add(Me.Button3)
-        Me.panelSidebar.Controls.Add(Me.Button2)
-        Me.panelSidebar.Controls.Add(Me.Button1)
+        Me.panelSidebar.Controls.Add(Me.btnLogOffenseSidebar)
+        Me.panelSidebar.Controls.Add(Me.btnDashboardSidebar)
         Me.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelSidebar.Location = New System.Drawing.Point(0, 0)
         Me.panelSidebar.Name = "panelSidebar"
@@ -168,42 +172,65 @@ Partial Class MainDashboardForm
         Me.Button3.Text = "Sanction Tracker"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnLogOffenseSidebar
         '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(209, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Button2.Location = New System.Drawing.Point(12, 124)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(232, 40)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Log Offense / Profile"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnLogOffenseSidebar.FlatAppearance.BorderSize = 0
+        Me.btnLogOffenseSidebar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogOffenseSidebar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogOffenseSidebar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(209, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnLogOffenseSidebar.Location = New System.Drawing.Point(12, 124)
+        Me.btnLogOffenseSidebar.Name = "btnLogOffenseSidebar"
+        Me.btnLogOffenseSidebar.Size = New System.Drawing.Size(232, 40)
+        Me.btnLogOffenseSidebar.TabIndex = 1
+        Me.btnLogOffenseSidebar.Text = "Log Offense / Profile"
+        Me.btnLogOffenseSidebar.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnDashboardSidebar
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(12, 78)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(232, 40)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Dashboard"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnDashboardSidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.btnDashboardSidebar.FlatAppearance.BorderSize = 0
+        Me.btnDashboardSidebar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDashboardSidebar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDashboardSidebar.ForeColor = System.Drawing.Color.White
+        Me.btnDashboardSidebar.Location = New System.Drawing.Point(12, 78)
+        Me.btnDashboardSidebar.Name = "btnDashboardSidebar"
+        Me.btnDashboardSidebar.Size = New System.Drawing.Size(232, 40)
+        Me.btnDashboardSidebar.TabIndex = 0
+        Me.btnDashboardSidebar.Text = "Dashboard"
+        Me.btnDashboardSidebar.UseVisualStyleBackColor = False
         '
         'panelHeader
         '
         Me.panelHeader.BackColor = System.Drawing.Color.White
+        Me.panelHeader.Controls.Add(Me.Panel8)
         Me.panelHeader.Controls.Add(Me.Label11)
         Me.panelHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelHeader.Location = New System.Drawing.Point(260, 0)
         Me.panelHeader.Name = "panelHeader"
         Me.panelHeader.Size = New System.Drawing.Size(924, 65)
         Me.panelHeader.TabIndex = 1
+        '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.White
+        Me.Panel8.Controls.Add(Me.Label1)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(0, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(924, 65)
+        Me.Panel8.TabIndex = 9
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(23, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(340, 25)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "SYSTEM OVERVIEW AND STATISTICS"
         '
         'Label11
         '
@@ -521,6 +548,18 @@ Partial Class MainDashboardForm
         Me.lblTotalInfractions.TabIndex = 0
         Me.lblTotalInfractions.Text = "142"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(292, 20)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(340, 25)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "SYSTEM OVERVIEW AND STATISTICS"
+        '
         'MainDashboardForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -539,6 +578,8 @@ Partial Class MainDashboardForm
         Me.panelSidebar.PerformLayout()
         Me.panelHeader.ResumeLayout(False)
         Me.panelHeader.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.panelMainContent.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
@@ -558,13 +599,13 @@ Partial Class MainDashboardForm
     End Sub
 
     Friend WithEvents panelSidebar As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnDashboardSidebar As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnLogOffenseSidebar As Button
     Friend WithEvents panelHeader As Panel
     Friend WithEvents panelMainContent As Panel
     Friend WithEvents Panel1 As Panel
@@ -596,4 +637,7 @@ Partial Class MainDashboardForm
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
 End Class

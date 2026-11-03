@@ -13,20 +13,25 @@ Public Class MainDashboardForm
             Using conn As MySqlConnection = GetConnection()
                 conn.Open()
 
-                ' 1. Get Total Infractions Count
+                ' 1. Total Infractions
                 Dim cmdTotal As New MySqlCommand("SELECT COUNT(*) FROM offense_logs", conn)
                 Dim totalInfractions As Integer = Convert.ToInt32(cmdTotal.ExecuteScalar())
                 lblTotalInfractions.Text = totalInfractions.ToString()
 
-                ' 2. Get Pending Sanctions Count
+                ' 2. Pending Sanctions
                 Dim cmdPending As New MySqlCommand("SELECT COUNT(*) FROM sanctions WHERE status = 'Pending'", conn)
                 Dim pendingSanctions As Integer = Convert.ToInt32(cmdPending.ExecuteScalar())
                 lblPendingSanctions.Text = pendingSanctions.ToString()
 
-                ' 3. Get Active Violations Count (e.g., Severe or Major)
+                ' 3. Clearances Issued (Sanctions with status 'Cleared')
+                Dim cmdCleared As New MySqlCommand("SELECT COUNT(*) FROM sanctions WHERE status = 'Cleared'", conn)
+                Dim clearancesIssued As Integer = Convert.ToInt32(cmdCleared.ExecuteScalar())
+                lblClearanceIssued.Text = clearancesIssued.ToString()
+
+                ' 4. Active Violations (Offenses flagged as Major or Severe)
                 Dim cmdActive As New MySqlCommand("SELECT COUNT(*) FROM offense_logs WHERE severity IN ('Major', 'Severe')", conn)
                 Dim activeViolations As Integer = Convert.ToInt32(cmdActive.ExecuteScalar())
-                lblClearanceIssued.Text = activeViolations.ToString()
+                lblActiveViolations.Text = activeViolations.ToString()
 
             End Using
         Catch ex As Exception
@@ -56,6 +61,28 @@ Public Class MainDashboardForm
         Catch ex As Exception
             MessageBox.Show("Error loading recent violations: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub ShowUserControl(uc As UserControl)
+        panelMainContent.Controls.Clear()
+        uc.Dock = DockStyle.Fill
+        panelMainContent.Controls.Add(uc)
+        uc.BringToFront()
+    End Sub
+
+    Private Sub btnLogOffenseSidebar_Click(sender As Object, e As EventArgs) Handles btnLogOffenseSidebar.Click
+        Dim logControl As New UcLogOffense()
+        ShowUserControl(logControl)
+    End Sub
+
+    Private Sub btnDashboardSidebar_Click(sender As Object, e As EventArgs) Handles btnDashboardSidebar.Click
+
+        panelMainContent.Controls.Clear()
+
+
+        LoadDashboardStatistics()
+        LoadRecentViolations()
+
     End Sub
 
 End Class
