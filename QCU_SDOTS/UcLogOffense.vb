@@ -5,141 +5,160 @@ Public Class UcLogOffense
     Private isStudentFound As Boolean = False
 
     Private Sub UcLogOffense_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Set default selections if items exist
-        If cboOffenseCategory.Items.Count > 0 Then cboOffenseCategory.SelectedIndex = 0
-        If cboDepartment.Items.Count > 0 Then cboDepartment.SelectedIndex = 0
-        If cboYearLevel.Items.Count > 0 Then cboYearLevel.SelectedIndex = 0
-        If cboSanction.Items.Count > 0 Then cboSanction.SelectedIndex = 0
-
+        InitDropdowns()
         rbMinor.Checked = True
     End Sub
 
-    ' 1. Search Student by ID and populate Info Panel
-    Private Sub btnFindStudent_Click(sender As Object, e As EventArgs) Handles btnFindStudent.Click
-        Dim studentID As String = txtStudentID.Text.Trim()
+    Private Sub InitDropdowns()
+        If cboOffenseCategory.Items.Count = 0 Then
+            cboOffenseCategory.Items.AddRange(New Object() {
+                "Uniform Violation",
+                "ID Not Visible / No ID",
+                "Disorderly Behavior",
+                "Vandalism",
+                "Cheating / Academic Dishonesty",
+                "Smoking / Vaping within Campus",
+                "Bullying / Harassment"
+            })
+            cboOffenseCategory.SelectedIndex = 0
+        End If
 
-        If String.IsNullOrEmpty(studentID) Then
-            MessageBox.Show("Please enter a Student ID.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If cboDepartment.Items.Count = 0 Then
+            cboDepartment.Items.AddRange(New Object() {
+                "CCS", "CBA", "CE", "CAS"
+            })
+            cboDepartment.SelectedIndex = 0
+        End If
+
+        If cboYearLevel.Items.Count = 0 Then
+            cboYearLevel.Items.AddRange(New Object() {
+                "BSIT - 1A", "BSIT - 1B", "BSIT - 2A", "BSIT - 2B", "BSIT - 3A", "BSIT - 3B", "BSIT - 4A", "BSIT - 4B",
+                "BSCS - 1A", "BSCS - 2A", "BSCS - 3A", "BSCS - 4A"
+            })
+            cboYearLevel.SelectedIndex = 0
+        End If
+
+        If cboSanction.Items.Count = 0 Then
+            cboSanction.Items.AddRange(New Object() {
+                "Written Warning / Reprimand",
+                "Community Service (5 Hours)",
+                "Community Service (10 Hours)",
+                "Parent Conference / Disciplinary Hearing",
+                "Suspension (3 Days)"
+            })
+            cboSanction.SelectedIndex = 0
+        End If
+    End Sub
+
+    Private Sub btnFindStudent_Click(sender As Object, e As EventArgs) Handles btnFindStudent.Click
+        Dim id As String = txtStudentID.Text.Trim()
+
+        If id = "" Then
+            MessageBox.Show("Please enter a Student ID.", "Search Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
         Try
             Using conn As MySqlConnection = GetConnection()
                 conn.Open()
-                Dim query As String = "SELECT first_name, last_name, department, course, year_section FROM students WHERE student_id = @id LIMIT 1"
+                Dim sql As String = "SELECT first_name, last_name, department, course, year_section FROM students WHERE student_id = @id LIMIT 1"
 
-                Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@id", studentID)
+                Using cmd As New MySqlCommand(sql, conn)
+                    cmd.Parameters.AddWithValue("@id", id)
 
-                    Using reader As MySqlDataReader = cmd.ExecuteReader()
-                        If reader.Read() Then
-                            ' Populate Full Name
-                            txtFullName.Text = $"{reader("first_name")} {reader("last_name")}"
+                    Using dr As MySqlDataReader = cmd.ExecuteReader()
+                        If dr.Read() Then
+                            txtFullName.Text = dr("first_name").ToString() & " " & dr("last_name").ToString()
 
-                            ' Populate Department ComboBox
-                            Dim dept As String = reader("department").ToString()
+                            Dim dept As String = dr("department").ToString()
                             If cboDepartment.Items.Contains(dept) Then
                                 cboDepartment.SelectedItem = dept
                             Else
                                 cboDepartment.Text = dept
                             End If
 
-                            ' Populate Year Level ComboBox
-                            Dim yearSec As String = $"{reader("course")} - {reader("year_section")}"
-                            If cboYearLevel.Items.Contains(yearSec) Then
-                                cboYearLevel.SelectedItem = yearSec
+                            Dim ySec As String = dr("course").ToString() & " - " & dr("year_section").ToString()
+                            If cboYearLevel.Items.Contains(ySec) Then
+                                cboYearLevel.SelectedItem = ySec
                             Else
-                                cboYearLevel.Text = yearSec
+                                cboYearLevel.Text = ySec
                             End If
 
                             isStudentFound = True
                         Else
-                            MessageBox.Show("Student ID not found in database.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            ClearStudentFields()
+                            MessageBox.Show("Student ID not found.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            ResetStudentInfo()
                         End If
                     End Using
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error loading student: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    ' 2. Save Offense Log and Sanction to Database
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not isStudentFound Then
-            MessageBox.Show("Please search and verify a valid student ID first.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please select a valid student first.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        If String.IsNullOrWhiteSpace(txtNarrative.Text) Then
-            MessageBox.Show("Please enter incident narrative remarks.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If txtNarrative.Text.Trim() = "" Then
+            MessageBox.Show("Please enter an incident description.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        ' Determine Severity Level
-        Dim severity As String = "Minor"
-        If rbMajor.Checked Then severity = "Major"
+        Dim sev As String = "Minor"
+        If rbMajor.Checked Then sev = "Major"
 
         Try
             Using conn As MySqlConnection = GetConnection()
                 conn.Open()
 
-                ' Step A: Insert into offense_logs and capture generated log_id
-                Dim queryOffense As String = "INSERT INTO offense_logs (student_id, offense_type, severity, description, reported_by) " &
-                                             "VALUES (@student_id, @offense_type, @severity, @description, @reported_by); " &
-                                             "SELECT LAST_INSERT_ID();"
+                Dim sqlOffense As String = "INSERT INTO offense_logs (student_id, offense_type, severity, description, reported_by) " &
+                                           "VALUES (@id, @offense, @sev, @desc, @user); SELECT LAST_INSERT_ID();"
 
-                Dim newLogID As Integer = 0
-                Using cmdOffense As New MySqlCommand(queryOffense, conn)
-                    cmdOffense.Parameters.AddWithValue("@student_id", txtStudentID.Text.Trim())
-                    cmdOffense.Parameters.AddWithValue("@offense_type", cboOffenseCategory.Text)
-                    cmdOffense.Parameters.AddWithValue("@severity", severity)
-                    cmdClearParameters(cmdOffense, "@description", txtNarrative.Text.Trim())
-                    cmdOffense.Parameters.AddWithValue("@reported_by", LoginForm.CurrentUserID) ' Linked to active login session
+                Dim logID As Integer = 0
+                Using cmd As New MySqlCommand(sqlOffense, conn)
+                    cmd.Parameters.AddWithValue("@id", txtStudentID.Text.Trim())
+                    cmd.Parameters.AddWithValue("@offense", cboOffenseCategory.Text)
+                    cmd.Parameters.AddWithValue("@sev", sev)
+                    cmd.Parameters.AddWithValue("@desc", txtNarrative.Text.Trim())
+                    cmd.Parameters.AddWithValue("@user", LoginForm.CurrentUserID)
 
-                    newLogID = Convert.ToInt32(cmdOffense.ExecuteScalar())
+                    logID = Convert.ToInt32(cmd.ExecuteScalar())
                 End Using
 
-                ' Step B: Insert corresponding record into sanctions table
-                Dim selectedSanction As String = If(cboSanction.SelectedItem IsNot Nothing, cboSanction.SelectedItem.ToString(), "Written Warning / Reprimand")
-
-                Dim querySanction As String = "INSERT INTO sanctions (log_id, sanction_type, status) VALUES (@log_id, @sanction_type, 'Pending')"
-                Using cmdSanction As New MySqlCommand(querySanction, conn)
-                    cmdSanction.Parameters.AddWithValue("@log_id", newLogID)
-                    cmdSanction.Parameters.AddWithValue("@sanction_type", selectedSanction)
+                Dim sqlSanction As String = "INSERT INTO sanctions (log_id, sanction_type, status) VALUES (@log_id, @type, 'Pending')"
+                Using cmdSanction As New MySqlCommand(sqlSanction, conn)
+                    cmdSanction.Parameters.AddWithValue("@log_id", logID)
+                    cmdSanction.Parameters.AddWithValue("@type", cboSanction.Text)
                     cmdSanction.ExecuteNonQuery()
                 End Using
-
             End Using
 
-            MessageBox.Show("Student infraction and sanction recorded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            ClearFormFields()
+            MessageBox.Show("Offense record saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ResetAllFields()
 
         Catch ex As Exception
-            MessageBox.Show("Error saving record: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error saving record: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    ' Helper to safely add parameters avoiding duplicates
-    Private Sub cmdClearParameters(cmd As MySqlCommand, paramName As String, value As String)
-        cmd.Parameters.AddWithValue(paramName, value)
-    End Sub
-
     Private Sub btnClearForm_Click(sender As Object, e As EventArgs) Handles btnClearForm.Click
-        ClearFormFields()
+        ResetAllFields()
     End Sub
 
-    Private Sub ClearStudentFields()
+    Private Sub ResetStudentInfo()
+        txtStudentID.Clear()
         txtFullName.Clear()
         If cboDepartment.Items.Count > 0 Then cboDepartment.SelectedIndex = 0
         If cboYearLevel.Items.Count > 0 Then cboYearLevel.SelectedIndex = 0
         isStudentFound = False
     End Sub
 
-    Private Sub ClearFormFields()
-        txtStudentID.Clear()
-        ClearStudentFields()
+    Private Sub ResetAllFields()
+        ResetStudentInfo()
         txtNarrative.Clear()
         If cboOffenseCategory.Items.Count > 0 Then cboOffenseCategory.SelectedIndex = 0
         If cboSanction.Items.Count > 0 Then cboSanction.SelectedIndex = 0

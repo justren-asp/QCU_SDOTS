@@ -32,46 +32,46 @@ Partial Class MainDashboardForm
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnLogOffenseSidebar = New System.Windows.Forms.Button()
         Me.btnDashboardSidebar = New System.Windows.Forms.Button()
-        Me.panelHeader = New System.Windows.Forms.Panel()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.panelMainContent = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.BtnClearance = New System.Windows.Forms.Button()
-        Me.BtnSearchRecords = New System.Windows.Forms.Button()
-        Me.BtnQuickLog = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.panelDashboardView = New System.Windows.Forms.Panel()
+        Me.panelTopViolations = New System.Windows.Forms.Panel()
+        Me.lblTopViolationsList = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.panelQuickActions = New System.Windows.Forms.Panel()
+        Me.btnGenerateClearance = New System.Windows.Forms.Button()
+        Me.btnSearchRecords = New System.Windows.Forms.Button()
+        Me.btnQuickLog = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.dgvRecentViolations = New System.Windows.Forms.DataGridView()
         Me.colRecordID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colStudentID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStudentName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colViolation = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lblActiveViolations = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lblClearanceIssued = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblActiveViolations = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblPendingSanctions = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblClearanceIssued = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblPendingSanctions = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.lblTotalInfractions = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblDashboardSubtitle = New System.Windows.Forms.Label()
+        Me.lblDashboardTitle = New System.Windows.Forms.Label()
         Me.panelSidebar.SuspendLayout()
-        Me.panelHeader.SuspendLayout()
-        Me.Panel8.SuspendLayout()
         Me.panelMainContent.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel5.SuspendLayout()
+        Me.panelDashboardView.SuspendLayout()
+        Me.panelTopViolations.SuspendLayout()
+        Me.panelQuickActions.SuspendLayout()
         CType(Me.dgvRecentViolations, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -199,355 +199,6 @@ Partial Class MainDashboardForm
         Me.btnDashboardSidebar.Text = "Dashboard"
         Me.btnDashboardSidebar.UseVisualStyleBackColor = False
         '
-        'panelHeader
-        '
-        Me.panelHeader.BackColor = System.Drawing.Color.White
-        Me.panelHeader.Controls.Add(Me.Panel8)
-        Me.panelHeader.Controls.Add(Me.Label11)
-        Me.panelHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelHeader.Location = New System.Drawing.Point(260, 0)
-        Me.panelHeader.Name = "panelHeader"
-        Me.panelHeader.Size = New System.Drawing.Size(924, 65)
-        Me.panelHeader.TabIndex = 1
-        '
-        'Panel8
-        '
-        Me.Panel8.BackColor = System.Drawing.Color.White
-        Me.Panel8.Controls.Add(Me.Label1)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(924, 65)
-        Me.Panel8.TabIndex = 9
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(23, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(340, 25)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "SYSTEM OVERVIEW AND STATISTICS"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(23, 19)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(340, 25)
-        Me.Label11.TabIndex = 8
-        Me.Label11.Text = "SYSTEM OVERVIEW AND STATISTICS"
-        '
-        'panelMainContent
-        '
-        Me.panelMainContent.Controls.Add(Me.Panel6)
-        Me.panelMainContent.Controls.Add(Me.Panel5)
-        Me.panelMainContent.Controls.Add(Me.dgvRecentViolations)
-        Me.panelMainContent.Controls.Add(Me.Panel4)
-        Me.panelMainContent.Controls.Add(Me.Panel3)
-        Me.panelMainContent.Controls.Add(Me.Panel2)
-        Me.panelMainContent.Controls.Add(Me.Panel1)
-        Me.panelMainContent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelMainContent.Location = New System.Drawing.Point(260, 65)
-        Me.panelMainContent.Name = "panelMainContent"
-        Me.panelMainContent.Size = New System.Drawing.Size(924, 596)
-        Me.panelMainContent.TabIndex = 2
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.White
-        Me.Panel6.Controls.Add(Me.Label14)
-        Me.Panel6.Controls.Add(Me.Label13)
-        Me.Panel6.Controls.Add(Me.Label12)
-        Me.Panel6.Location = New System.Drawing.Point(712, 323)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(200, 251)
-        Me.Panel6.TabIndex = 4
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(17, 71)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(132, 13)
-        Me.Label14.TabIndex = 2
-        Me.Label14.Text = "2. Unauthorized Absence"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(17, 48)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(163, 13)
-        Me.Label13.TabIndex = 1
-        Me.Label13.Text = "1. Dress Code Non-Compliance"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(17, 12)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(163, 17)
-        Me.Label12.TabIndex = 0
-        Me.Label12.Text = "Top Violations This Term"
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.White
-        Me.Panel5.Controls.Add(Me.BtnClearance)
-        Me.Panel5.Controls.Add(Me.BtnSearchRecords)
-        Me.Panel5.Controls.Add(Me.BtnQuickLog)
-        Me.Panel5.Controls.Add(Me.Label9)
-        Me.Panel5.Location = New System.Drawing.Point(712, 139)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(200, 164)
-        Me.Panel5.TabIndex = 3
-        '
-        'BtnClearance
-        '
-        Me.BtnClearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.BtnClearance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnClearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnClearance.ForeColor = System.Drawing.Color.Black
-        Me.BtnClearance.Location = New System.Drawing.Point(20, 117)
-        Me.BtnClearance.Name = "BtnClearance"
-        Me.BtnClearance.Size = New System.Drawing.Size(168, 29)
-        Me.BtnClearance.TabIndex = 3
-        Me.BtnClearance.Text = "Generate Clearance Slip"
-        Me.BtnClearance.UseVisualStyleBackColor = False
-        '
-        'BtnSearchRecords
-        '
-        Me.BtnSearchRecords.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.BtnSearchRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSearchRecords.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSearchRecords.ForeColor = System.Drawing.Color.Black
-        Me.BtnSearchRecords.Location = New System.Drawing.Point(20, 82)
-        Me.BtnSearchRecords.Name = "BtnSearchRecords"
-        Me.BtnSearchRecords.Size = New System.Drawing.Size(168, 29)
-        Me.BtnSearchRecords.TabIndex = 2
-        Me.BtnSearchRecords.Text = "Search Student Records"
-        Me.BtnSearchRecords.UseVisualStyleBackColor = False
-        '
-        'BtnQuickLog
-        '
-        Me.BtnQuickLog.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.BtnQuickLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnQuickLog.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnQuickLog.ForeColor = System.Drawing.Color.White
-        Me.BtnQuickLog.Location = New System.Drawing.Point(20, 47)
-        Me.BtnQuickLog.Name = "BtnQuickLog"
-        Me.BtnQuickLog.Size = New System.Drawing.Size(168, 29)
-        Me.BtnQuickLog.TabIndex = 1
-        Me.BtnQuickLog.Text = "Quick-Log Student Offense"
-        Me.BtnQuickLog.UseVisualStyleBackColor = False
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(17, 12)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(171, 17)
-        Me.Label9.TabIndex = 0
-        Me.Label9.Text = "Disciplinary Quick Actions"
-        '
-        'dgvRecentViolations
-        '
-        Me.dgvRecentViolations.AllowUserToAddRows = False
-        Me.dgvRecentViolations.AllowUserToDeleteRows = False
-        Me.dgvRecentViolations.BackgroundColor = System.Drawing.Color.White
-        Me.dgvRecentViolations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRecentViolations.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colRecordID, Me.colStudentName, Me.colViolation, Me.colDate, Me.colStatus})
-        Me.dgvRecentViolations.Location = New System.Drawing.Point(16, 139)
-        Me.dgvRecentViolations.Name = "dgvRecentViolations"
-        Me.dgvRecentViolations.ReadOnly = True
-        Me.dgvRecentViolations.Size = New System.Drawing.Size(665, 435)
-        Me.dgvRecentViolations.TabIndex = 2
-        '
-        'colRecordID
-        '
-        Me.colRecordID.HeaderText = "Record ID"
-        Me.colRecordID.Name = "colRecordID"
-        Me.colRecordID.ReadOnly = True
-        '
-        'colStudentName
-        '
-        Me.colStudentName.HeaderText = "Student Name"
-        Me.colStudentName.Name = "colStudentName"
-        Me.colStudentName.ReadOnly = True
-        '
-        'colViolation
-        '
-        Me.colViolation.HeaderText = "Offense / Violation"
-        Me.colViolation.Name = "colViolation"
-        Me.colViolation.ReadOnly = True
-        '
-        'colDate
-        '
-        Me.colDate.HeaderText = "Date Logged"
-        Me.colDate.Name = "colDate"
-        Me.colDate.ReadOnly = True
-        '
-        'colStatus
-        '
-        Me.colStatus.HeaderText = "Status"
-        Me.colStatus.Name = "colStatus"
-        Me.colStatus.ReadOnly = True
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Controls.Add(Me.lblActiveViolations)
-        Me.Panel4.Controls.Add(Me.Label6)
-        Me.Panel4.Location = New System.Drawing.Point(712, 13)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(200, 90)
-        Me.Panel4.TabIndex = 1
-        '
-        'lblActiveViolations
-        '
-        Me.lblActiveViolations.AutoSize = True
-        Me.lblActiveViolations.BackColor = System.Drawing.Color.Transparent
-        Me.lblActiveViolations.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblActiveViolations.ForeColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.lblActiveViolations.Location = New System.Drawing.Point(78, 16)
-        Me.lblActiveViolations.Name = "lblActiveViolations"
-        Me.lblActiveViolations.Size = New System.Drawing.Size(49, 37)
-        Me.lblActiveViolations.TabIndex = 4
-        Me.lblActiveViolations.Text = "14"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Gray
-        Me.Label6.Location = New System.Drawing.Point(53, 61)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(96, 15)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "Active Violations"
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.lblClearanceIssued)
-        Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Location = New System.Drawing.Point(481, 13)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(200, 90)
-        Me.Panel3.TabIndex = 1
-        '
-        'lblClearanceIssued
-        '
-        Me.lblClearanceIssued.AutoSize = True
-        Me.lblClearanceIssued.BackColor = System.Drawing.Color.Transparent
-        Me.lblClearanceIssued.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblClearanceIssued.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.lblClearanceIssued.Location = New System.Drawing.Point(77, 16)
-        Me.lblClearanceIssued.Name = "lblClearanceIssued"
-        Me.lblClearanceIssued.Size = New System.Drawing.Size(49, 37)
-        Me.lblClearanceIssued.TabIndex = 3
-        Me.lblClearanceIssued.Text = "14"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Gray
-        Me.Label5.Location = New System.Drawing.Point(50, 61)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 15)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Clearances Issued"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.lblPendingSanctions)
-        Me.Panel2.Location = New System.Drawing.Point(246, 13)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(200, 90)
-        Me.Panel2.TabIndex = 1
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(47, 61)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(106, 15)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Pending Sanctions"
-        '
-        'lblPendingSanctions
-        '
-        Me.lblPendingSanctions.AutoSize = True
-        Me.lblPendingSanctions.BackColor = System.Drawing.Color.Transparent
-        Me.lblPendingSanctions.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPendingSanctions.ForeColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(7, Byte), Integer))
-        Me.lblPendingSanctions.Location = New System.Drawing.Point(75, 16)
-        Me.lblPendingSanctions.Name = "lblPendingSanctions"
-        Me.lblPendingSanctions.Size = New System.Drawing.Size(49, 37)
-        Me.lblPendingSanctions.TabIndex = 2
-        Me.lblPendingSanctions.Text = "37"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.lblTotalInfractions)
-        Me.Panel1.Location = New System.Drawing.Point(16, 13)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 90)
-        Me.Panel1.TabIndex = 0
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(50, 61)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 15)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Total Infractions"
-        '
-        'lblTotalInfractions
-        '
-        Me.lblTotalInfractions.AutoSize = True
-        Me.lblTotalInfractions.BackColor = System.Drawing.Color.Transparent
-        Me.lblTotalInfractions.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalInfractions.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.lblTotalInfractions.Location = New System.Drawing.Point(66, 16)
-        Me.lblTotalInfractions.Name = "lblTotalInfractions"
-        Me.lblTotalInfractions.Size = New System.Drawing.Size(65, 37)
-        Me.lblTotalInfractions.TabIndex = 0
-        Me.lblTotalInfractions.Text = "142"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -560,6 +211,332 @@ Partial Class MainDashboardForm
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "SYSTEM OVERVIEW AND STATISTICS"
         '
+        'panelMainContent
+        '
+        Me.panelMainContent.Controls.Add(Me.panelDashboardView)
+        Me.panelMainContent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelMainContent.Location = New System.Drawing.Point(260, 0)
+        Me.panelMainContent.Name = "panelMainContent"
+        Me.panelMainContent.Size = New System.Drawing.Size(924, 661)
+        Me.panelMainContent.TabIndex = 1
+        '
+        'panelDashboardView
+        '
+        Me.panelDashboardView.Controls.Add(Me.panelTopViolations)
+        Me.panelDashboardView.Controls.Add(Me.panelQuickActions)
+        Me.panelDashboardView.Controls.Add(Me.dgvRecentViolations)
+        Me.panelDashboardView.Controls.Add(Me.Panel5)
+        Me.panelDashboardView.Controls.Add(Me.Panel4)
+        Me.panelDashboardView.Controls.Add(Me.Panel3)
+        Me.panelDashboardView.Controls.Add(Me.Panel2)
+        Me.panelDashboardView.Controls.Add(Me.Panel1)
+        Me.panelDashboardView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelDashboardView.Location = New System.Drawing.Point(0, 0)
+        Me.panelDashboardView.Name = "panelDashboardView"
+        Me.panelDashboardView.Size = New System.Drawing.Size(924, 661)
+        Me.panelDashboardView.TabIndex = 0
+        '
+        'panelTopViolations
+        '
+        Me.panelTopViolations.BackColor = System.Drawing.Color.White
+        Me.panelTopViolations.Controls.Add(Me.lblTopViolationsList)
+        Me.panelTopViolations.Controls.Add(Me.Label7)
+        Me.panelTopViolations.Location = New System.Drawing.Point(680, 395)
+        Me.panelTopViolations.Name = "panelTopViolations"
+        Me.panelTopViolations.Size = New System.Drawing.Size(210, 244)
+        Me.panelTopViolations.TabIndex = 25
+        '
+        'lblTopViolationsList
+        '
+        Me.lblTopViolationsList.BackColor = System.Drawing.Color.Transparent
+        Me.lblTopViolationsList.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTopViolationsList.ForeColor = System.Drawing.Color.Black
+        Me.lblTopViolationsList.Location = New System.Drawing.Point(23, 45)
+        Me.lblTopViolationsList.Name = "lblTopViolationsList"
+        Me.lblTopViolationsList.Size = New System.Drawing.Size(163, 180)
+        Me.lblTopViolationsList.TabIndex = 6
+        Me.lblTopViolationsList.Text = "1. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "2." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "3." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "4." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "5."
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(23, 11)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(163, 17)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Top Violations This Term"
+        '
+        'panelQuickActions
+        '
+        Me.panelQuickActions.BackColor = System.Drawing.Color.White
+        Me.panelQuickActions.Controls.Add(Me.btnGenerateClearance)
+        Me.panelQuickActions.Controls.Add(Me.btnSearchRecords)
+        Me.panelQuickActions.Controls.Add(Me.btnQuickLog)
+        Me.panelQuickActions.Controls.Add(Me.Label6)
+        Me.panelQuickActions.Location = New System.Drawing.Point(680, 205)
+        Me.panelQuickActions.Name = "panelQuickActions"
+        Me.panelQuickActions.Size = New System.Drawing.Size(210, 175)
+        Me.panelQuickActions.TabIndex = 10
+        '
+        'btnGenerateClearance
+        '
+        Me.btnGenerateClearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.btnGenerateClearance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGenerateClearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGenerateClearance.ForeColor = System.Drawing.Color.Black
+        Me.btnGenerateClearance.Location = New System.Drawing.Point(16, 121)
+        Me.btnGenerateClearance.Name = "btnGenerateClearance"
+        Me.btnGenerateClearance.Size = New System.Drawing.Size(180, 35)
+        Me.btnGenerateClearance.TabIndex = 24
+        Me.btnGenerateClearance.Text = "Generate Clearance Slip"
+        Me.btnGenerateClearance.UseVisualStyleBackColor = False
+        '
+        'btnSearchRecords
+        '
+        Me.btnSearchRecords.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.btnSearchRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchRecords.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchRecords.ForeColor = System.Drawing.Color.Black
+        Me.btnSearchRecords.Location = New System.Drawing.Point(16, 80)
+        Me.btnSearchRecords.Name = "btnSearchRecords"
+        Me.btnSearchRecords.Size = New System.Drawing.Size(180, 35)
+        Me.btnSearchRecords.TabIndex = 22
+        Me.btnSearchRecords.Text = "Search Offense Records"
+        Me.btnSearchRecords.UseVisualStyleBackColor = False
+        '
+        'btnQuickLog
+        '
+        Me.btnQuickLog.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.btnQuickLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuickLog.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuickLog.ForeColor = System.Drawing.Color.White
+        Me.btnQuickLog.Location = New System.Drawing.Point(16, 42)
+        Me.btnQuickLog.Name = "btnQuickLog"
+        Me.btnQuickLog.Size = New System.Drawing.Size(180, 32)
+        Me.btnQuickLog.TabIndex = 23
+        Me.btnQuickLog.Text = "+ Log New Offense"
+        Me.btnQuickLog.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(60, 11)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 17)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Quick Actions"
+        '
+        'dgvRecentViolations
+        '
+        Me.dgvRecentViolations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRecentViolations.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colRecordID, Me.colStudentID, Me.colStudentName, Me.colViolation, Me.colDate, Me.colStatus})
+        Me.dgvRecentViolations.Location = New System.Drawing.Point(20, 205)
+        Me.dgvRecentViolations.Name = "dgvRecentViolations"
+        Me.dgvRecentViolations.Size = New System.Drawing.Size(650, 434)
+        Me.dgvRecentViolations.TabIndex = 9
+        '
+        'colRecordID
+        '
+        Me.colRecordID.HeaderText = "Record ID"
+        Me.colRecordID.Name = "colRecordID"
+        '
+        'colStudentID
+        '
+        Me.colStudentID.HeaderText = "Student ID"
+        Me.colStudentID.Name = "colStudentID"
+        '
+        'colStudentName
+        '
+        Me.colStudentName.HeaderText = "Student Name"
+        Me.colStudentName.Name = "colStudentName"
+        '
+        'colViolation
+        '
+        Me.colViolation.HeaderText = "Offense Type"
+        Me.colViolation.Name = "colViolation"
+        '
+        'colDate
+        '
+        Me.colDate.HeaderText = "Date Logged"
+        Me.colDate.Name = "colDate"
+        '
+        'colStatus
+        '
+        Me.colStatus.HeaderText = "Status"
+        Me.colStatus.Name = "colStatus"
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.White
+        Me.Panel5.Controls.Add(Me.Label5)
+        Me.Panel5.Controls.Add(Me.lblActiveViolations)
+        Me.Panel5.Location = New System.Drawing.Point(680, 85)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(210, 100)
+        Me.Panel5.TabIndex = 8
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Gray
+        Me.Label5.Location = New System.Drawing.Point(59, 66)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(94, 13)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Active Violations"
+        '
+        'lblActiveViolations
+        '
+        Me.lblActiveViolations.AutoSize = True
+        Me.lblActiveViolations.BackColor = System.Drawing.Color.Transparent
+        Me.lblActiveViolations.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblActiveViolations.ForeColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.lblActiveViolations.Location = New System.Drawing.Point(92, 22)
+        Me.lblActiveViolations.Name = "lblActiveViolations"
+        Me.lblActiveViolations.Size = New System.Drawing.Size(28, 32)
+        Me.lblActiveViolations.TabIndex = 5
+        Me.lblActiveViolations.Text = "0"
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.White
+        Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Controls.Add(Me.lblClearanceIssued)
+        Me.Panel4.Location = New System.Drawing.Point(460, 85)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(210, 100)
+        Me.Panel4.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Gray
+        Me.Label4.Location = New System.Drawing.Point(54, 66)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(98, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Clearances Issued"
+        '
+        'lblClearanceIssued
+        '
+        Me.lblClearanceIssued.AutoSize = True
+        Me.lblClearanceIssued.BackColor = System.Drawing.Color.Transparent
+        Me.lblClearanceIssued.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClearanceIssued.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.lblClearanceIssued.Location = New System.Drawing.Point(93, 22)
+        Me.lblClearanceIssued.Name = "lblClearanceIssued"
+        Me.lblClearanceIssued.Size = New System.Drawing.Size(28, 32)
+        Me.lblClearanceIssued.TabIndex = 5
+        Me.lblClearanceIssued.Text = "0"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.lblPendingSanctions)
+        Me.Panel3.Location = New System.Drawing.Point(240, 85)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(210, 100)
+        Me.Panel3.TabIndex = 6
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(55, 66)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(104, 13)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Pending Sanctions"
+        '
+        'lblPendingSanctions
+        '
+        Me.lblPendingSanctions.AutoSize = True
+        Me.lblPendingSanctions.BackColor = System.Drawing.Color.Transparent
+        Me.lblPendingSanctions.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPendingSanctions.ForeColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(7, Byte), Integer))
+        Me.lblPendingSanctions.Location = New System.Drawing.Point(94, 22)
+        Me.lblPendingSanctions.Name = "lblPendingSanctions"
+        Me.lblPendingSanctions.Size = New System.Drawing.Size(28, 32)
+        Me.lblPendingSanctions.TabIndex = 5
+        Me.lblPendingSanctions.Text = "0"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.lblTotalInfractions)
+        Me.Panel2.Location = New System.Drawing.Point(20, 85)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(210, 100)
+        Me.Panel2.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(57, 66)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(90, 13)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Total Infractions"
+        '
+        'lblTotalInfractions
+        '
+        Me.lblTotalInfractions.AutoSize = True
+        Me.lblTotalInfractions.BackColor = System.Drawing.Color.Transparent
+        Me.lblTotalInfractions.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalInfractions.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.lblTotalInfractions.Location = New System.Drawing.Point(90, 22)
+        Me.lblTotalInfractions.Name = "lblTotalInfractions"
+        Me.lblTotalInfractions.Size = New System.Drawing.Size(28, 32)
+        Me.lblTotalInfractions.TabIndex = 5
+        Me.lblTotalInfractions.Text = "0"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.lblDashboardSubtitle)
+        Me.Panel1.Controls.Add(Me.lblDashboardTitle)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(924, 65)
+        Me.Panel1.TabIndex = 1
+        '
+        'lblDashboardSubtitle
+        '
+        Me.lblDashboardSubtitle.AutoSize = True
+        Me.lblDashboardSubtitle.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDashboardSubtitle.ForeColor = System.Drawing.Color.Gray
+        Me.lblDashboardSubtitle.Location = New System.Drawing.Point(20, 42)
+        Me.lblDashboardSubtitle.Name = "lblDashboardSubtitle"
+        Me.lblDashboardSubtitle.Size = New System.Drawing.Size(424, 13)
+        Me.lblDashboardSubtitle.TabIndex = 4
+        Me.lblDashboardSubtitle.Text = "Monitor institutional infraction metrics, pending disciplinary actions, and live " &
+    "logs."
+        '
+        'lblDashboardTitle
+        '
+        Me.lblDashboardTitle.AutoSize = True
+        Me.lblDashboardTitle.BackColor = System.Drawing.Color.Transparent
+        Me.lblDashboardTitle.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDashboardTitle.Location = New System.Drawing.Point(20, 15)
+        Me.lblDashboardTitle.Name = "lblDashboardTitle"
+        Me.lblDashboardTitle.Size = New System.Drawing.Size(284, 25)
+        Me.lblDashboardTitle.TabIndex = 0
+        Me.lblDashboardTitle.Text = "System Overview and Statistics"
+        '
         'MainDashboardForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -567,7 +544,6 @@ Partial Class MainDashboardForm
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1184, 661)
         Me.Controls.Add(Me.panelMainContent)
-        Me.Controls.Add(Me.panelHeader)
         Me.Controls.Add(Me.panelSidebar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -576,16 +552,15 @@ Partial Class MainDashboardForm
         Me.Text = "QCU Student Disciplinary and Offense Tracking System [Main Dashboard]"
         Me.panelSidebar.ResumeLayout(False)
         Me.panelSidebar.PerformLayout()
-        Me.panelHeader.ResumeLayout(False)
-        Me.panelHeader.PerformLayout()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
         Me.panelMainContent.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
+        Me.panelDashboardView.ResumeLayout(False)
+        Me.panelTopViolations.ResumeLayout(False)
+        Me.panelTopViolations.PerformLayout()
+        Me.panelQuickActions.ResumeLayout(False)
+        Me.panelQuickActions.PerformLayout()
+        CType(Me.dgvRecentViolations, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.dgvRecentViolations, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -606,38 +581,38 @@ Partial Class MainDashboardForm
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents btnLogOffenseSidebar As Button
-    Friend WithEvents panelHeader As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label3 As Label
     Friend WithEvents panelMainContent As Panel
+    Friend WithEvents panelDashboardView As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents lblDashboardSubtitle As Label
+    Friend WithEvents lblDashboardTitle As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lblTotalInfractions As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents lblPendingSanctions As Label
+    Friend WithEvents Panel3 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents dgvRecentViolations As DataGridView
-    Friend WithEvents lblActiveViolations As Label
+    Friend WithEvents lblPendingSanctions As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label4 As Label
     Friend WithEvents lblClearanceIssued As Label
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents lblActiveViolations As Label
+    Friend WithEvents dgvRecentViolations As DataGridView
     Friend WithEvents colRecordID As DataGridViewTextBoxColumn
+    Friend WithEvents colStudentID As DataGridViewTextBoxColumn
     Friend WithEvents colStudentName As DataGridViewTextBoxColumn
     Friend WithEvents colViolation As DataGridViewTextBoxColumn
     Friend WithEvents colDate As DataGridViewTextBoxColumn
     Friend WithEvents colStatus As DataGridViewTextBoxColumn
-    Friend WithEvents Label9 As Label
-    Friend WithEvents BtnSearchRecords As Button
-    Friend WithEvents BtnQuickLog As Button
-    Friend WithEvents Label10 As Label
-    Friend WithEvents BtnClearance As Button
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Panel8 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents panelQuickActions As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents btnQuickLog As Button
+    Friend WithEvents btnGenerateClearance As Button
+    Friend WithEvents btnSearchRecords As Button
+    Friend WithEvents panelTopViolations As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents lblTopViolationsList As Label
 End Class

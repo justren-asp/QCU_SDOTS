@@ -20,7 +20,7 @@ Public Class LoginForm
 
         ' 2. Authenticate Against Database using GetConnection()
         Try
-            ' Using statement automatically handles opening and closing/disposing the connection
+            ' Using statement automatically handles connection lifecycle management
             Using conn As MySqlConnection = GetConnection()
                 conn.Open()
 
@@ -32,7 +32,7 @@ Public Class LoginForm
 
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
                         If reader.Read() Then
-                            ' Save session details
+                            ' Save session details globally
                             CurrentUserID = Convert.ToInt32(reader("user_id"))
                             CurrentUsername = reader("username").ToString()
                             CurrentFullName = reader("full_name").ToString()
@@ -46,6 +46,8 @@ Public Class LoginForm
                             Me.Hide()
                         Else
                             MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            txtPassword.Clear()
+                            txtPassword.Focus()
                         End If
                     End Using
                 End Using
