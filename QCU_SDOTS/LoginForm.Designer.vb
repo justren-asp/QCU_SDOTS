@@ -51,30 +51,18 @@ Partial Class LoginForm
         Me.panelBanner.Controls.Add(Me.Label8)
         Me.panelBanner.Controls.Add(Me.Panel2)
         Me.panelBanner.Controls.Add(Me.Label1)
-        Me.panelBanner.Location = New System.Drawing.Point(430, 0)
+        Me.panelBanner.Location = New System.Drawing.Point(520, 0)
         Me.panelBanner.Name = "panelBanner"
-        Me.panelBanner.Size = New System.Drawing.Size(454, 561)
+        Me.panelBanner.Size = New System.Drawing.Size(846, 768)
         Me.panelBanner.TabIndex = 0
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.Menu
-        Me.Label8.Location = New System.Drawing.Point(24, 465)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(389, 25)
-        Me.Label8.TabIndex = 2
-        Me.Label8.Text = "QCU Office of Student Affairs and Discipline" & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Gold
         Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Location = New System.Drawing.Point(29, 384)
+        Me.Panel2.Location = New System.Drawing.Point(40, 560)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(50, 6)
+        Me.Panel2.Size = New System.Drawing.Size(56, 6)
         Me.Panel2.TabIndex = 1
         '
         'Label7
@@ -88,20 +76,32 @@ Partial Class LoginForm
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(24, 394)
+        Me.Label1.Location = New System.Drawing.Point(40, 576)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(265, 60)
+        Me.Label1.Size = New System.Drawing.Size(420, 72)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Every report, tracked. Every action, accountable."
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(40, 658)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(410, 25)
+        Me.Label8.TabIndex = 2
+        Me.Label8.Text = "QCU Office of Student Affairs and Discipline"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(190, 30)
+        Me.PictureBox1.Location = New System.Drawing.Point(224, 110)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(60, 60)
+        Me.PictureBox1.Size = New System.Drawing.Size(72, 72)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
@@ -110,11 +110,11 @@ Partial Class LoginForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 21.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.Navy
-        Me.Label2.Location = New System.Drawing.Point(145, 100)
+        Me.Label2.Location = New System.Drawing.Point(170, 192)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(146, 32)
+        Me.Label2.Size = New System.Drawing.Size(180, 38)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "QCU SDOTS"
         '
@@ -122,56 +122,58 @@ Partial Class LoginForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(90, 135)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.DimGray
+        Me.Label3.Location = New System.Drawing.Point(108, 236)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(271, 15)
+        Me.Label3.Size = New System.Drawing.Size(305, 19)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Student Disciplinary and Offense Tracking System"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(60, 180)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.5!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(95, 285)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(110, 15)
+        Me.Label4.Size = New System.Drawing.Size(135, 19)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Username / User ID"
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(60, 205)
+        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 11.5!)
+        Me.txtUsername.Location = New System.Drawing.Point(95, 312)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(310, 20)
+        Me.txtUsername.Size = New System.Drawing.Size(330, 28)
         Me.txtUsername.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(60, 245)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.5!, System.Drawing.FontStyle.Bold)
+        Me.Label5.Location = New System.Drawing.Point(95, 355)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 15)
+        Me.Label5.Size = New System.Drawing.Size(72, 19)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Password"
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(60, 270)
+        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 11.5!)
+        Me.txtPassword.Location = New System.Drawing.Point(95, 382)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(310, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(330, 28)
         Me.txtPassword.TabIndex = 7
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'chkShowPassword
         '
         Me.chkShowPassword.AutoSize = True
-        Me.chkShowPassword.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowPassword.Location = New System.Drawing.Point(60, 310)
+        Me.chkShowPassword.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.chkShowPassword.Location = New System.Drawing.Point(95, 424)
         Me.chkShowPassword.Name = "chkShowPassword"
-        Me.chkShowPassword.Size = New System.Drawing.Size(224, 17)
+        Me.chkShowPassword.Size = New System.Drawing.Size(260, 21)
         Me.chkShowPassword.TabIndex = 8
         Me.chkShowPassword.Text = "Remember credentials on this machine"
         Me.chkShowPassword.UseVisualStyleBackColor = True
@@ -180,41 +182,41 @@ Partial Class LoginForm
         '
         Me.btnLogin.BackColor = System.Drawing.Color.MediumBlue
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogin.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.Font = New System.Drawing.Font("Segoe UI Semibold", 12.5!, System.Drawing.FontStyle.Bold)
         Me.btnLogin.ForeColor = System.Drawing.Color.White
-        Me.btnLogin.Location = New System.Drawing.Point(60, 350)
+        Me.btnLogin.Location = New System.Drawing.Point(95, 464)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(310, 38)
+        Me.btnLogin.Size = New System.Drawing.Size(330, 44)
         Me.btnLogin.TabIndex = 9
         Me.btnLogin.Text = "LOG IN"
         Me.btnLogin.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Silver
+        Me.Panel1.Location = New System.Drawing.Point(95, 528)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(330, 2)
+        Me.Panel1.TabIndex = 11
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label6.Location = New System.Drawing.Point(70, 441)
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label6.ForeColor = System.Drawing.Color.DimGray
+        Me.Label6.Location = New System.Drawing.Point(104, 544)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(291, 13)
+        Me.Label6.Size = New System.Drawing.Size(312, 15)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "AUTHORIZED DISCIPLINE OFFICERS AND ADMIN ONLY"
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Silver
-        Me.Panel1.Location = New System.Drawing.Point(60, 413)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(310, 2)
-        Me.Panel1.TabIndex = 11
-        '
         'LoginForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(884, 561)
+        Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnLogin)
@@ -227,12 +229,12 @@ Partial Class LoginForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.panelBanner)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.Name = "LoginForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "QCU Student Disciplinary and Offense Tracking System [Log In]"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.panelBanner.ResumeLayout(False)
         Me.panelBanner.PerformLayout()
         Me.Panel2.ResumeLayout(False)

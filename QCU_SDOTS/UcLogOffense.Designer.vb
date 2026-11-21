@@ -1,9 +1,8 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UcLogOffense
     Inherits System.Windows.Forms.UserControl
 
-    'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -14,441 +13,633 @@ Partial Class UcLogOffense
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
-    'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.panelHeader = New System.Windows.Forms.Panel()
         Me.lblSubtitle = New System.Windows.Forms.Label()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.panelStudentInfo = New System.Windows.Forms.Panel()
-        Me.cboYearLevel = New System.Windows.Forms.ComboBox()
-        Me.lblYearLevel = New System.Windows.Forms.Label()
-        Me.cboDepartment = New System.Windows.Forms.ComboBox()
-        Me.lblDepartment = New System.Windows.Forms.Label()
-        Me.txtFullName = New System.Windows.Forms.TextBox()
-        Me.lblFullName = New System.Windows.Forms.Label()
-        Me.btnFindStudent = New System.Windows.Forms.Button()
-        Me.txtStudentID = New System.Windows.Forms.TextBox()
+        Me.panelStudentCard = New System.Windows.Forms.Panel()
+        Me.lblStudentSectionTitle = New System.Windows.Forms.Label()
         Me.lblStudentID = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.panelOffenseDetails = New System.Windows.Forms.Panel()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnClearForm = New System.Windows.Forms.Button()
-        Me.txtNarrative = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtStudentID = New System.Windows.Forms.TextBox()
+        Me.btnFindStudent = New System.Windows.Forms.Button()
+        Me.lblLastName = New System.Windows.Forms.Label()
+        Me.txtLastName = New System.Windows.Forms.TextBox()
+        Me.lblFirstName = New System.Windows.Forms.Label()
+        Me.txtFirstName = New System.Windows.Forms.TextBox()
+        Me.lblMiddleName = New System.Windows.Forms.Label()
+        Me.txtMiddleName = New System.Windows.Forms.TextBox()
+        Me.lblDepartment = New System.Windows.Forms.Label()
+        Me.txtDepartment = New System.Windows.Forms.TextBox()
+        Me.lblYearLevel = New System.Windows.Forms.Label()
+        Me.txtYearLevel = New System.Windows.Forms.TextBox()
+        Me.panelOffenseCard = New System.Windows.Forms.Panel()
+        Me.lblOffenseSectionTitle = New System.Windows.Forms.Label()
+        Me.lblCategory = New System.Windows.Forms.Label()
+        Me.cboCategory = New System.Windows.Forms.ComboBox()
+        Me.lblSpecificOffense = New System.Windows.Forms.Label()
+        Me.cboSpecificOffense = New System.Windows.Forms.ComboBox()
+        Me.lblCustomOffense = New System.Windows.Forms.Label()
+        Me.txtCustomOffense = New System.Windows.Forms.TextBox()
+        Me.lblIncidentDate = New System.Windows.Forms.Label()
+        Me.txtIncidentDate = New System.Windows.Forms.TextBox()
+        Me.lblIncidentTime = New System.Windows.Forms.Label()
+        Me.txtIncidentTime = New System.Windows.Forms.TextBox()
+        Me.lblWarningLevel = New System.Windows.Forms.Label()
+        Me.cboWarningLevel = New System.Windows.Forms.ComboBox()
+        Me.lblSanction = New System.Windows.Forms.Label()
         Me.cboSanction = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.rbMajor = New System.Windows.Forms.RadioButton()
-        Me.rbMinor = New System.Windows.Forms.RadioButton()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.dtpIncidentTime = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.dtpIncidentDate = New System.Windows.Forms.DateTimePicker()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.cboOffenseCategory = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
-        Me.panelStudentInfo.SuspendLayout()
-        Me.panelOffenseDetails.SuspendLayout()
+        Me.lblRemarks = New System.Windows.Forms.Label()
+        Me.txtRemarks = New System.Windows.Forms.TextBox()
+        Me.panelProofBox = New System.Windows.Forms.Panel()
+        Me.lblProofTitle = New System.Windows.Forms.Label()
+        Me.btnAttachFiles = New System.Windows.Forms.Button()
+        Me.btnRemoveAttachment = New System.Windows.Forms.Button()
+        Me.lstAttachments = New System.Windows.Forms.ListBox()
+        Me.btnClearForm = New System.Windows.Forms.Button()
+        Me.btnSaveInfraction = New System.Windows.Forms.Button()
+        Me.panelHeader.SuspendLayout()
+        Me.panelStudentCard.SuspendLayout()
+        Me.panelOffenseCard.SuspendLayout()
+        Me.panelProofBox.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'panelHeader
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.lblSubtitle)
-        Me.Panel1.Controls.Add(Me.lblTitle)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(920, 65)
-        Me.Panel1.TabIndex = 0
-        '
-        'lblSubtitle
-        '
-        Me.lblSubtitle.AutoSize = True
-        Me.lblSubtitle.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSubtitle.ForeColor = System.Drawing.Color.Gray
-        Me.lblSubtitle.Location = New System.Drawing.Point(20, 42)
-        Me.lblSubtitle.Name = "lblSubtitle"
-        Me.lblSubtitle.Size = New System.Drawing.Size(496, 13)
-        Me.lblSubtitle.TabIndex = 4
-        Me.lblSubtitle.Text = "Log individual student offenses with details, severity classification, and recomm" &
-    "ended sanctions."
+        Me.panelHeader.BackColor = System.Drawing.Color.White
+        Me.panelHeader.Controls.Add(Me.lblSubtitle)
+        Me.panelHeader.Controls.Add(Me.lblTitle)
+        Me.panelHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelHeader.Location = New System.Drawing.Point(0, 0)
+        Me.panelHeader.Name = "panelHeader"
+        Me.panelHeader.Size = New System.Drawing.Size(1120, 74)
+        Me.panelHeader.TabIndex = 0
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.BackColor = System.Drawing.Color.Transparent
-        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(20, 15)
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.lblTitle.Location = New System.Drawing.Point(24, 12)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(289, 25)
+        Me.lblTitle.Size = New System.Drawing.Size(277, 30)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Record New Student Infraction"
         '
-        'panelStudentInfo
+        'lblSubtitle
         '
-        Me.panelStudentInfo.BackColor = System.Drawing.Color.White
-        Me.panelStudentInfo.Controls.Add(Me.cboYearLevel)
-        Me.panelStudentInfo.Controls.Add(Me.lblYearLevel)
-        Me.panelStudentInfo.Controls.Add(Me.cboDepartment)
-        Me.panelStudentInfo.Controls.Add(Me.lblDepartment)
-        Me.panelStudentInfo.Controls.Add(Me.txtFullName)
-        Me.panelStudentInfo.Controls.Add(Me.lblFullName)
-        Me.panelStudentInfo.Controls.Add(Me.btnFindStudent)
-        Me.panelStudentInfo.Controls.Add(Me.txtStudentID)
-        Me.panelStudentInfo.Controls.Add(Me.lblStudentID)
-        Me.panelStudentInfo.Controls.Add(Me.Label2)
-        Me.panelStudentInfo.Location = New System.Drawing.Point(20, 70)
-        Me.panelStudentInfo.Name = "panelStudentInfo"
-        Me.panelStudentInfo.Size = New System.Drawing.Size(880, 110)
-        Me.panelStudentInfo.TabIndex = 1
+        Me.lblSubtitle.AutoSize = True
+        Me.lblSubtitle.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.lblSubtitle.ForeColor = System.Drawing.Color.DimGray
+        Me.lblSubtitle.Location = New System.Drawing.Point(24, 45)
+        Me.lblSubtitle.Name = "lblSubtitle"
+        Me.lblSubtitle.Size = New System.Drawing.Size(520, 17)
+        Me.lblSubtitle.TabIndex = 1
+        Me.lblSubtitle.Text = "Log student offenses, classify severity and warning level, specify custom violations, and attach proof files."
         '
-        'cboYearLevel
+        'panelStudentCard
         '
-        Me.cboYearLevel.FormattingEnabled = True
-        Me.cboYearLevel.Location = New System.Drawing.Point(655, 55)
-        Me.cboYearLevel.Name = "cboYearLevel"
-        Me.cboYearLevel.Size = New System.Drawing.Size(210, 21)
-        Me.cboYearLevel.TabIndex = 9
+        Me.panelStudentCard.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panelStudentCard.BackColor = System.Drawing.Color.White
+        Me.panelStudentCard.Controls.Add(Me.txtYearLevel)
+        Me.panelStudentCard.Controls.Add(Me.lblYearLevel)
+        Me.panelStudentCard.Controls.Add(Me.txtDepartment)
+        Me.panelStudentCard.Controls.Add(Me.lblDepartment)
+        Me.panelStudentCard.Controls.Add(Me.txtMiddleName)
+        Me.panelStudentCard.Controls.Add(Me.lblMiddleName)
+        Me.panelStudentCard.Controls.Add(Me.txtFirstName)
+        Me.panelStudentCard.Controls.Add(Me.lblFirstName)
+        Me.panelStudentCard.Controls.Add(Me.txtLastName)
+        Me.panelStudentCard.Controls.Add(Me.lblLastName)
+        Me.panelStudentCard.Controls.Add(Me.btnFindStudent)
+        Me.panelStudentCard.Controls.Add(Me.txtStudentID)
+        Me.panelStudentCard.Controls.Add(Me.lblStudentID)
+        Me.panelStudentCard.Controls.Add(Me.lblStudentSectionTitle)
+        Me.panelStudentCard.Location = New System.Drawing.Point(24, 88)
+        Me.panelStudentCard.Name = "panelStudentCard"
+        Me.panelStudentCard.Size = New System.Drawing.Size(1072, 162)
+        Me.panelStudentCard.TabIndex = 1
         '
-        'lblYearLevel
+        'lblStudentSectionTitle
         '
-        Me.lblYearLevel.AutoSize = True
-        Me.lblYearLevel.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblYearLevel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.lblYearLevel.Location = New System.Drawing.Point(655, 35)
-        Me.lblYearLevel.Name = "lblYearLevel"
-        Me.lblYearLevel.Size = New System.Drawing.Size(59, 13)
-        Me.lblYearLevel.TabIndex = 8
-        Me.lblYearLevel.Text = "Year Level"
-        '
-        'cboDepartment
-        '
-        Me.cboDepartment.FormattingEnabled = True
-        Me.cboDepartment.Location = New System.Drawing.Point(425, 55)
-        Me.cboDepartment.Name = "cboDepartment"
-        Me.cboDepartment.Size = New System.Drawing.Size(220, 21)
-        Me.cboDepartment.TabIndex = 7
-        '
-        'lblDepartment
-        '
-        Me.lblDepartment.AutoSize = True
-        Me.lblDepartment.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDepartment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.lblDepartment.Location = New System.Drawing.Point(425, 35)
-        Me.lblDepartment.Name = "lblDepartment"
-        Me.lblDepartment.Size = New System.Drawing.Size(125, 13)
-        Me.lblDepartment.TabIndex = 6
-        Me.lblDepartment.Text = "Department / Program"
-        '
-        'txtFullName
-        '
-        Me.txtFullName.Location = New System.Drawing.Point(195, 55)
-        Me.txtFullName.Multiline = True
-        Me.txtFullName.Name = "txtFullName"
-        Me.txtFullName.ReadOnly = True
-        Me.txtFullName.Size = New System.Drawing.Size(220, 25)
-        Me.txtFullName.TabIndex = 5
-        '
-        'lblFullName
-        '
-        Me.lblFullName.AutoSize = True
-        Me.lblFullName.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFullName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.lblFullName.Location = New System.Drawing.Point(195, 35)
-        Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(60, 13)
-        Me.lblFullName.TabIndex = 4
-        Me.lblFullName.Text = "Full Name"
-        '
-        'btnFindStudent
-        '
-        Me.btnFindStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.btnFindStudent.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFindStudent.ForeColor = System.Drawing.Color.White
-        Me.btnFindStudent.Location = New System.Drawing.Point(130, 55)
-        Me.btnFindStudent.Name = "btnFindStudent"
-        Me.btnFindStudent.Size = New System.Drawing.Size(55, 25)
-        Me.btnFindStudent.TabIndex = 3
-        Me.btnFindStudent.Text = "FIND"
-        Me.btnFindStudent.UseVisualStyleBackColor = False
-        '
-        'txtStudentID
-        '
-        Me.txtStudentID.Location = New System.Drawing.Point(15, 55)
-        Me.txtStudentID.Multiline = True
-        Me.txtStudentID.Name = "txtStudentID"
-        Me.txtStudentID.Size = New System.Drawing.Size(110, 25)
-        Me.txtStudentID.TabIndex = 2
+        Me.lblStudentSectionTitle.AutoSize = True
+        Me.lblStudentSectionTitle.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Bold)
+        Me.lblStudentSectionTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.lblStudentSectionTitle.Location = New System.Drawing.Point(18, 10)
+        Me.lblStudentSectionTitle.Name = "lblStudentSectionTitle"
+        Me.lblStudentSectionTitle.Size = New System.Drawing.Size(136, 19)
+        Me.lblStudentSectionTitle.TabIndex = 0
+        Me.lblStudentSectionTitle.Text = "Student Information"
         '
         'lblStudentID
         '
         Me.lblStudentID.AutoSize = True
-        Me.lblStudentID.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStudentID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.lblStudentID.Location = New System.Drawing.Point(15, 35)
+        Me.lblStudentID.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblStudentID.ForeColor = System.Drawing.Color.DimGray
+        Me.lblStudentID.Location = New System.Drawing.Point(18, 36)
         Me.lblStudentID.Name = "lblStudentID"
-        Me.lblStudentID.Size = New System.Drawing.Size(62, 13)
+        Me.lblStudentID.Size = New System.Drawing.Size(74, 15)
         Me.lblStudentID.TabIndex = 1
-        Me.lblStudentID.Text = "Student ID"
+        Me.lblStudentID.Text = "Student ID *"
         '
-        'Label2
+        'txtStudentID
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Navy
-        Me.Label2.Location = New System.Drawing.Point(15, 10)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(122, 15)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Student Information"
+        Me.txtStudentID.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtStudentID.Location = New System.Drawing.Point(18, 56)
+        Me.txtStudentID.Name = "txtStudentID"
+        Me.txtStudentID.Size = New System.Drawing.Size(130, 25)
+        Me.txtStudentID.TabIndex = 2
         '
-        'panelOffenseDetails
+        'btnFindStudent
         '
-        Me.panelOffenseDetails.BackColor = System.Drawing.Color.White
-        Me.panelOffenseDetails.Controls.Add(Me.btnSave)
-        Me.panelOffenseDetails.Controls.Add(Me.btnClearForm)
-        Me.panelOffenseDetails.Controls.Add(Me.txtNarrative)
-        Me.panelOffenseDetails.Controls.Add(Me.Label8)
-        Me.panelOffenseDetails.Controls.Add(Me.cboSanction)
-        Me.panelOffenseDetails.Controls.Add(Me.Label7)
-        Me.panelOffenseDetails.Controls.Add(Me.rbMajor)
-        Me.panelOffenseDetails.Controls.Add(Me.rbMinor)
-        Me.panelOffenseDetails.Controls.Add(Me.Label6)
-        Me.panelOffenseDetails.Controls.Add(Me.dtpIncidentTime)
-        Me.panelOffenseDetails.Controls.Add(Me.Label5)
-        Me.panelOffenseDetails.Controls.Add(Me.dtpIncidentDate)
-        Me.panelOffenseDetails.Controls.Add(Me.Label4)
-        Me.panelOffenseDetails.Controls.Add(Me.cboOffenseCategory)
-        Me.panelOffenseDetails.Controls.Add(Me.Label3)
-        Me.panelOffenseDetails.Controls.Add(Me.Label1)
-        Me.panelOffenseDetails.Location = New System.Drawing.Point(20, 195)
-        Me.panelOffenseDetails.Name = "panelOffenseDetails"
-        Me.panelOffenseDetails.Size = New System.Drawing.Size(880, 420)
-        Me.panelOffenseDetails.TabIndex = 2
+        Me.btnFindStudent.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.btnFindStudent.FlatAppearance.BorderSize = 0
+        Me.btnFindStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFindStudent.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnFindStudent.ForeColor = System.Drawing.Color.White
+        Me.btnFindStudent.Location = New System.Drawing.Point(156, 54)
+        Me.btnFindStudent.Name = "btnFindStudent"
+        Me.btnFindStudent.Size = New System.Drawing.Size(64, 29)
+        Me.btnFindStudent.TabIndex = 3
+        Me.btnFindStudent.Text = "Find"
+        Me.btnFindStudent.UseVisualStyleBackColor = False
         '
-        'btnSave
+        'lblLastName
         '
-        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(715, 360)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(150, 35)
-        Me.btnSave.TabIndex = 22
-        Me.btnSave.Text = "SAVE"
-        Me.btnSave.UseVisualStyleBackColor = False
+        Me.lblLastName.AutoSize = True
+        Me.lblLastName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblLastName.ForeColor = System.Drawing.Color.DimGray
+        Me.lblLastName.Location = New System.Drawing.Point(238, 36)
+        Me.lblLastName.Name = "lblLastName"
+        Me.lblLastName.Size = New System.Drawing.Size(69, 15)
+        Me.lblLastName.TabIndex = 4
+        Me.lblLastName.Text = "Last Name"
         '
-        'btnClearForm
+        'txtLastName
         '
-        Me.btnClearForm.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.btnClearForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClearForm.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearForm.ForeColor = System.Drawing.Color.Black
-        Me.btnClearForm.Location = New System.Drawing.Point(560, 360)
-        Me.btnClearForm.Name = "btnClearForm"
-        Me.btnClearForm.Size = New System.Drawing.Size(140, 35)
-        Me.btnClearForm.TabIndex = 21
-        Me.btnClearForm.Text = "Clear Form"
-        Me.btnClearForm.UseVisualStyleBackColor = False
+        Me.txtLastName.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.txtLastName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtLastName.Location = New System.Drawing.Point(238, 56)
+        Me.txtLastName.Name = "txtLastName"
+        Me.txtLastName.ReadOnly = True
+        Me.txtLastName.Size = New System.Drawing.Size(255, 25)
+        Me.txtLastName.TabIndex = 5
         '
-        'txtNarrative
+        'lblFirstName
         '
-        Me.txtNarrative.Location = New System.Drawing.Point(15, 175)
-        Me.txtNarrative.Multiline = True
-        Me.txtNarrative.Name = "txtNarrative"
-        Me.txtNarrative.Size = New System.Drawing.Size(850, 150)
-        Me.txtNarrative.TabIndex = 10
+        Me.lblFirstName.AutoSize = True
+        Me.lblFirstName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblFirstName.ForeColor = System.Drawing.Color.DimGray
+        Me.lblFirstName.Location = New System.Drawing.Point(510, 36)
+        Me.lblFirstName.Name = "lblFirstName"
+        Me.lblFirstName.Size = New System.Drawing.Size(70, 15)
+        Me.lblFirstName.TabIndex = 6
+        Me.lblFirstName.Text = "First Name"
         '
-        'Label8
+        'txtFirstName
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(15, 155)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(201, 13)
-        Me.Label8.TabIndex = 20
-        Me.Label8.Text = "Incident Narrative / Detailed Remarks"
+        Me.txtFirstName.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.txtFirstName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtFirstName.Location = New System.Drawing.Point(510, 56)
+        Me.txtFirstName.Name = "txtFirstName"
+        Me.txtFirstName.ReadOnly = True
+        Me.txtFirstName.Size = New System.Drawing.Size(265, 25)
+        Me.txtFirstName.TabIndex = 7
+        '
+        'lblMiddleName
+        '
+        Me.lblMiddleName.AutoSize = True
+        Me.lblMiddleName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblMiddleName.ForeColor = System.Drawing.Color.DimGray
+        Me.lblMiddleName.Location = New System.Drawing.Point(792, 36)
+        Me.lblMiddleName.Name = "lblMiddleName"
+        Me.lblMiddleName.Size = New System.Drawing.Size(83, 15)
+        Me.lblMiddleName.TabIndex = 8
+        Me.lblMiddleName.Text = "Middle Name"
+        '
+        'txtMiddleName
+        '
+        Me.txtMiddleName.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.txtMiddleName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtMiddleName.Location = New System.Drawing.Point(792, 56)
+        Me.txtMiddleName.Name = "txtMiddleName"
+        Me.txtMiddleName.ReadOnly = True
+        Me.txtMiddleName.Size = New System.Drawing.Size(260, 25)
+        Me.txtMiddleName.TabIndex = 9
+        '
+        'lblDepartment
+        '
+        Me.lblDepartment.AutoSize = True
+        Me.lblDepartment.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblDepartment.ForeColor = System.Drawing.Color.DimGray
+        Me.lblDepartment.Location = New System.Drawing.Point(238, 94)
+        Me.lblDepartment.Name = "lblDepartment"
+        Me.lblDepartment.Size = New System.Drawing.Size(134, 15)
+        Me.lblDepartment.TabIndex = 10
+        Me.lblDepartment.Text = "Department / Program"
+        '
+        'txtDepartment
+        '
+        Me.txtDepartment.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.txtDepartment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtDepartment.Location = New System.Drawing.Point(238, 114)
+        Me.txtDepartment.Name = "txtDepartment"
+        Me.txtDepartment.ReadOnly = True
+        Me.txtDepartment.Size = New System.Drawing.Size(537, 25)
+        Me.txtDepartment.TabIndex = 11
+        '
+        'lblYearLevel
+        '
+        Me.lblYearLevel.AutoSize = True
+        Me.lblYearLevel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblYearLevel.ForeColor = System.Drawing.Color.DimGray
+        Me.lblYearLevel.Location = New System.Drawing.Point(792, 94)
+        Me.lblYearLevel.Name = "lblYearLevel"
+        Me.lblYearLevel.Size = New System.Drawing.Size(66, 15)
+        Me.lblYearLevel.TabIndex = 12
+        Me.lblYearLevel.Text = "Year Level"
+        '
+        'txtYearLevel
+        '
+        Me.txtYearLevel.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.txtYearLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtYearLevel.Location = New System.Drawing.Point(792, 114)
+        Me.txtYearLevel.Name = "txtYearLevel"
+        Me.txtYearLevel.ReadOnly = True
+        Me.txtYearLevel.Size = New System.Drawing.Size(260, 25)
+        Me.txtYearLevel.TabIndex = 13
+        '
+        'panelOffenseCard
+        '
+        Me.panelOffenseCard.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panelOffenseCard.BackColor = System.Drawing.Color.White
+        Me.panelOffenseCard.Controls.Add(Me.btnSaveInfraction)
+        Me.panelOffenseCard.Controls.Add(Me.btnClearForm)
+        Me.panelOffenseCard.Controls.Add(Me.panelProofBox)
+        Me.panelOffenseCard.Controls.Add(Me.txtRemarks)
+        Me.panelOffenseCard.Controls.Add(Me.lblRemarks)
+        Me.panelOffenseCard.Controls.Add(Me.cboSanction)
+        Me.panelOffenseCard.Controls.Add(Me.lblSanction)
+        Me.panelOffenseCard.Controls.Add(Me.cboWarningLevel)
+        Me.panelOffenseCard.Controls.Add(Me.lblWarningLevel)
+        Me.panelOffenseCard.Controls.Add(Me.txtIncidentTime)
+        Me.panelOffenseCard.Controls.Add(Me.lblIncidentTime)
+        Me.panelOffenseCard.Controls.Add(Me.txtIncidentDate)
+        Me.panelOffenseCard.Controls.Add(Me.lblIncidentDate)
+        Me.panelOffenseCard.Controls.Add(Me.txtCustomOffense)
+        Me.panelOffenseCard.Controls.Add(Me.lblCustomOffense)
+        Me.panelOffenseCard.Controls.Add(Me.cboSpecificOffense)
+        Me.panelOffenseCard.Controls.Add(Me.lblSpecificOffense)
+        Me.panelOffenseCard.Controls.Add(Me.cboCategory)
+        Me.panelOffenseCard.Controls.Add(Me.lblCategory)
+        Me.panelOffenseCard.Controls.Add(Me.lblOffenseSectionTitle)
+        Me.panelOffenseCard.Location = New System.Drawing.Point(24, 262)
+        Me.panelOffenseCard.Name = "panelOffenseCard"
+        Me.panelOffenseCard.Size = New System.Drawing.Size(1072, 488)
+        Me.panelOffenseCard.TabIndex = 2
+        '
+        'lblOffenseSectionTitle
+        '
+        Me.lblOffenseSectionTitle.AutoSize = True
+        Me.lblOffenseSectionTitle.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Bold)
+        Me.lblOffenseSectionTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.lblOffenseSectionTitle.Location = New System.Drawing.Point(18, 12)
+        Me.lblOffenseSectionTitle.Name = "lblOffenseSectionTitle"
+        Me.lblOffenseSectionTitle.Size = New System.Drawing.Size(113, 19)
+        Me.lblOffenseSectionTitle.TabIndex = 0
+        Me.lblOffenseSectionTitle.Text = "Offense Details"
+        '
+        'lblCategory
+        '
+        Me.lblCategory.AutoSize = True
+        Me.lblCategory.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCategory.ForeColor = System.Drawing.Color.DimGray
+        Me.lblCategory.Location = New System.Drawing.Point(18, 40)
+        Me.lblCategory.Name = "lblCategory"
+        Me.lblCategory.Size = New System.Drawing.Size(118, 15)
+        Me.lblCategory.TabIndex = 1
+        Me.lblCategory.Text = "Offense Category *"
+        '
+        'cboCategory
+        '
+        Me.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboCategory.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cboCategory.FormattingEnabled = True
+        Me.cboCategory.Location = New System.Drawing.Point(18, 60)
+        Me.cboCategory.Name = "cboCategory"
+        Me.cboCategory.Size = New System.Drawing.Size(155, 25)
+        Me.cboCategory.TabIndex = 2
+        '
+        'lblSpecificOffense
+        '
+        Me.lblSpecificOffense.AutoSize = True
+        Me.lblSpecificOffense.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblSpecificOffense.ForeColor = System.Drawing.Color.DimGray
+        Me.lblSpecificOffense.Location = New System.Drawing.Point(188, 40)
+        Me.lblSpecificOffense.Name = "lblSpecificOffense"
+        Me.lblSpecificOffense.Size = New System.Drawing.Size(106, 15)
+        Me.lblSpecificOffense.TabIndex = 3
+        Me.lblSpecificOffense.Text = "Specific Offense *"
+        '
+        'cboSpecificOffense
+        '
+        Me.cboSpecificOffense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSpecificOffense.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cboSpecificOffense.FormattingEnabled = True
+        Me.cboSpecificOffense.Location = New System.Drawing.Point(188, 60)
+        Me.cboSpecificOffense.Name = "cboSpecificOffense"
+        Me.cboSpecificOffense.Size = New System.Drawing.Size(482, 25)
+        Me.cboSpecificOffense.TabIndex = 4
+        '
+        'lblIncidentDate
+        '
+        Me.lblIncidentDate.AutoSize = True
+        Me.lblIncidentDate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblIncidentDate.ForeColor = System.Drawing.Color.DimGray
+        Me.lblIncidentDate.Location = New System.Drawing.Point(686, 40)
+        Me.lblIncidentDate.Name = "lblIncidentDate"
+        Me.lblIncidentDate.Size = New System.Drawing.Size(156, 15)
+        Me.lblIncidentDate.TabIndex = 5
+        Me.lblIncidentDate.Text = "Date of Incident (MM/DD/YYYY)"
+        '
+        'txtIncidentDate
+        '
+        Me.txtIncidentDate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtIncidentDate.Location = New System.Drawing.Point(686, 60)
+        Me.txtIncidentDate.Name = "txtIncidentDate"
+        Me.txtIncidentDate.Size = New System.Drawing.Size(185, 25)
+        Me.txtIncidentDate.TabIndex = 6
+        '
+        'lblIncidentTime
+        '
+        Me.lblIncidentTime.AutoSize = True
+        Me.lblIncidentTime.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblIncidentTime.ForeColor = System.Drawing.Color.DimGray
+        Me.lblIncidentTime.Location = New System.Drawing.Point(886, 40)
+        Me.lblIncidentTime.Name = "lblIncidentTime"
+        Me.lblIncidentTime.Size = New System.Drawing.Size(96, 15)
+        Me.lblIncidentTime.TabIndex = 7
+        Me.lblIncidentTime.Text = "Time of Incident"
+        '
+        'txtIncidentTime
+        '
+        Me.txtIncidentTime.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtIncidentTime.Location = New System.Drawing.Point(886, 60)
+        Me.txtIncidentTime.Name = "txtIncidentTime"
+        Me.txtIncidentTime.Size = New System.Drawing.Size(166, 25)
+        Me.txtIncidentTime.TabIndex = 8
+        '
+        'lblWarningLevel
+        '
+        Me.lblWarningLevel.AutoSize = True
+        Me.lblWarningLevel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblWarningLevel.ForeColor = System.Drawing.Color.DimGray
+        Me.lblWarningLevel.Location = New System.Drawing.Point(18, 98)
+        Me.lblWarningLevel.Name = "lblWarningLevel"
+        Me.lblWarningLevel.Size = New System.Drawing.Size(92, 15)
+        Me.lblWarningLevel.TabIndex = 9
+        Me.lblWarningLevel.Text = "Warning Level"
+        '
+        'cboWarningLevel
+        '
+        Me.cboWarningLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboWarningLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cboWarningLevel.FormattingEnabled = True
+        Me.cboWarningLevel.Location = New System.Drawing.Point(18, 118)
+        Me.cboWarningLevel.Name = "cboWarningLevel"
+        Me.cboWarningLevel.Size = New System.Drawing.Size(220, 25)
+        Me.cboWarningLevel.TabIndex = 10
+        '
+        'lblSanction
+        '
+        Me.lblSanction.AutoSize = True
+        Me.lblSanction.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblSanction.ForeColor = System.Drawing.Color.DimGray
+        Me.lblSanction.Location = New System.Drawing.Point(254, 98)
+        Me.lblSanction.Name = "lblSanction"
+        Me.lblSanction.Size = New System.Drawing.Size(171, 15)
+        Me.lblSanction.TabIndex = 11
+        Me.lblSanction.Text = "Recommended Sanction / Action"
         '
         'cboSanction
         '
+        Me.cboSanction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSanction.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cboSanction.FormattingEnabled = True
-        Me.cboSanction.Items.AddRange(New Object() {"Written Warning", "Guardian Conference", "Community Service", "Disciplinary Board Referral"})
-        Me.cboSanction.Location = New System.Drawing.Point(330, 125)
+        Me.cboSanction.Location = New System.Drawing.Point(254, 118)
         Me.cboSanction.Name = "cboSanction"
-        Me.cboSanction.Size = New System.Drawing.Size(240, 21)
-        Me.cboSanction.TabIndex = 19
+        Me.cboSanction.Size = New System.Drawing.Size(305, 25)
+        Me.cboSanction.TabIndex = 12
         '
-        'Label7
+        'lblCustomOffense
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(330, 105)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(208, 13)
-        Me.Label7.TabIndex = 18
-        Me.Label7.Text = "Recommended Sanction / Intervention"
+        Me.lblCustomOffense.AutoSize = True
+        Me.lblCustomOffense.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCustomOffense.ForeColor = System.Drawing.Color.DimGray
+        Me.lblCustomOffense.Location = New System.Drawing.Point(575, 98)
+        Me.lblCustomOffense.Name = "lblCustomOffense"
+        Me.lblCustomOffense.Size = New System.Drawing.Size(195, 15)
+        Me.lblCustomOffense.TabIndex = 13
+        Me.lblCustomOffense.Text = "Specify Offense (If Others)"
+        Me.lblCustomOffense.Visible = False
         '
-        'rbMajor
+        'txtCustomOffense
         '
-        Me.rbMajor.AutoSize = True
-        Me.rbMajor.Location = New System.Drawing.Point(130, 125)
-        Me.rbMajor.Name = "rbMajor"
-        Me.rbMajor.Size = New System.Drawing.Size(91, 17)
-        Me.rbMajor.TabIndex = 17
-        Me.rbMajor.TabStop = True
-        Me.rbMajor.Text = "Major Offense"
-        Me.rbMajor.UseVisualStyleBackColor = True
+        Me.txtCustomOffense.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtCustomOffense.Location = New System.Drawing.Point(575, 118)
+        Me.txtCustomOffense.Name = "txtCustomOffense"
+        Me.txtCustomOffense.Size = New System.Drawing.Size(477, 25)
+        Me.txtCustomOffense.TabIndex = 14
+        Me.txtCustomOffense.Visible = False
         '
-        'rbMinor
+        'lblRemarks
         '
-        Me.rbMinor.AutoSize = True
-        Me.rbMinor.Location = New System.Drawing.Point(15, 125)
-        Me.rbMinor.Name = "rbMinor"
-        Me.rbMinor.Size = New System.Drawing.Size(91, 17)
-        Me.rbMinor.TabIndex = 16
-        Me.rbMinor.TabStop = True
-        Me.rbMinor.Text = "Minor Offense"
-        Me.rbMinor.UseVisualStyleBackColor = True
+        Me.lblRemarks.AutoSize = True
+        Me.lblRemarks.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblRemarks.ForeColor = System.Drawing.Color.DimGray
+        Me.lblRemarks.Location = New System.Drawing.Point(18, 156)
+        Me.lblRemarks.Name = "lblRemarks"
+        Me.lblRemarks.Size = New System.Drawing.Size(192, 15)
+        Me.lblRemarks.TabIndex = 15
+        Me.lblRemarks.Text = "Incident Narrative / Detailed Remarks"
         '
-        'Label6
+        'txtRemarks
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(15, 105)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(78, 13)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "Severity Level"
+        Me.txtRemarks.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtRemarks.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtRemarks.Location = New System.Drawing.Point(18, 176)
+        Me.txtRemarks.Multiline = True
+        Me.txtRemarks.Name = "txtRemarks"
+        Me.txtRemarks.Size = New System.Drawing.Size(652, 246)
+        Me.txtRemarks.TabIndex = 16
         '
-        'dtpIncidentTime
+        'panelProofBox
         '
-        Me.dtpIncidentTime.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpIncidentTime.Location = New System.Drawing.Point(580, 65)
-        Me.dtpIncidentTime.Name = "dtpIncidentTime"
-        Me.dtpIncidentTime.Size = New System.Drawing.Size(285, 20)
-        Me.dtpIncidentTime.TabIndex = 14
+        Me.panelProofBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panelProofBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.panelProofBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelProofBox.Controls.Add(Me.lstAttachments)
+        Me.panelProofBox.Controls.Add(Me.btnRemoveAttachment)
+        Me.panelProofBox.Controls.Add(Me.btnAttachFiles)
+        Me.panelProofBox.Controls.Add(Me.lblProofTitle)
+        Me.panelProofBox.Location = New System.Drawing.Point(686, 176)
+        Me.panelProofBox.Name = "panelProofBox"
+        Me.panelProofBox.Size = New System.Drawing.Size(366, 246)
+        Me.panelProofBox.TabIndex = 17
         '
-        'Label5
+        'lblProofTitle
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(580, 45)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(91, 13)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Time of Incident"
+        Me.lblProofTitle.AutoSize = True
+        Me.lblProofTitle.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.lblProofTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.lblProofTitle.Location = New System.Drawing.Point(12, 10)
+        Me.lblProofTitle.Name = "lblProofTitle"
+        Me.lblProofTitle.Size = New System.Drawing.Size(171, 17)
+        Me.lblProofTitle.TabIndex = 0
+        Me.lblProofTitle.Text = "Evidence / Proof Attachments"
         '
-        'dtpIncidentDate
+        'btnAttachFiles
         '
-        Me.dtpIncidentDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpIncidentDate.Location = New System.Drawing.Point(330, 65)
-        Me.dtpIncidentDate.Name = "dtpIncidentDate"
-        Me.dtpIncidentDate.Size = New System.Drawing.Size(240, 20)
-        Me.dtpIncidentDate.TabIndex = 12
+        Me.btnAttachFiles.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.btnAttachFiles.FlatAppearance.BorderSize = 0
+        Me.btnAttachFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAttachFiles.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.btnAttachFiles.ForeColor = System.Drawing.Color.White
+        Me.btnAttachFiles.Location = New System.Drawing.Point(12, 34)
+        Me.btnAttachFiles.Name = "btnAttachFiles"
+        Me.btnAttachFiles.Size = New System.Drawing.Size(115, 28)
+        Me.btnAttachFiles.TabIndex = 1
+        Me.btnAttachFiles.Text = "Attach Files"
+        Me.btnAttachFiles.UseVisualStyleBackColor = False
         '
-        'Label4
+        'btnRemoveAttachment
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(330, 45)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(177, 13)
-        Me.Label4.TabIndex = 11
-        Me.Label4.Text = "Date of Incident (MM/DD/YYYY)"
+        Me.btnRemoveAttachment.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.btnRemoveAttachment.FlatAppearance.BorderSize = 0
+        Me.btnRemoveAttachment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRemoveAttachment.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.btnRemoveAttachment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btnRemoveAttachment.Location = New System.Drawing.Point(135, 34)
+        Me.btnRemoveAttachment.Name = "btnRemoveAttachment"
+        Me.btnRemoveAttachment.Size = New System.Drawing.Size(85, 28)
+        Me.btnRemoveAttachment.TabIndex = 2
+        Me.btnRemoveAttachment.Text = "Remove"
+        Me.btnRemoveAttachment.UseVisualStyleBackColor = False
         '
-        'cboOffenseCategory
+        'lstAttachments
         '
-        Me.cboOffenseCategory.FormattingEnabled = True
-        Me.cboOffenseCategory.Location = New System.Drawing.Point(15, 65)
-        Me.cboOffenseCategory.Name = "cboOffenseCategory"
-        Me.cboOffenseCategory.Size = New System.Drawing.Size(300, 21)
-        Me.cboOffenseCategory.TabIndex = 10
+        Me.lstAttachments.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lstAttachments.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lstAttachments.FormattingEnabled = True
+        Me.lstAttachments.ItemHeight = 15
+        Me.lstAttachments.Location = New System.Drawing.Point(12, 70)
+        Me.lstAttachments.Name = "lstAttachments"
+        Me.lstAttachments.Size = New System.Drawing.Size(340, 162)
+        Me.lstAttachments.TabIndex = 3
         '
-        'Label3
+        'btnClearForm
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(15, 45)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(176, 13)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Offense Category / Classification"
+        Me.btnClearForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnClearForm.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.btnClearForm.FlatAppearance.BorderSize = 0
+        Me.btnClearForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClearForm.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnClearForm.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btnClearForm.Location = New System.Drawing.Point(780, 436)
+        Me.btnClearForm.Name = "btnClearForm"
+        Me.btnClearForm.Size = New System.Drawing.Size(120, 36)
+        Me.btnClearForm.TabIndex = 18
+        Me.btnClearForm.Text = "Clear Form"
+        Me.btnClearForm.UseVisualStyleBackColor = False
         '
-        'Label1
+        'btnSaveInfraction
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Navy
-        Me.Label1.Location = New System.Drawing.Point(15, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(93, 15)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Offense Details"
+        Me.btnSaveInfraction.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSaveInfraction.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.btnSaveInfraction.FlatAppearance.BorderSize = 0
+        Me.btnSaveInfraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSaveInfraction.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnSaveInfraction.ForeColor = System.Drawing.Color.White
+        Me.btnSaveInfraction.Location = New System.Drawing.Point(912, 436)
+        Me.btnSaveInfraction.Name = "btnSaveInfraction"
+        Me.btnSaveInfraction.Size = New System.Drawing.Size(140, 36)
+        Me.btnSaveInfraction.TabIndex = 19
+        Me.btnSaveInfraction.Text = "Save Infraction"
+        Me.btnSaveInfraction.UseVisualStyleBackColor = False
         '
         'UcLogOffense
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(249, Byte), Integer))
-        Me.Controls.Add(Me.panelOffenseDetails)
-        Me.Controls.Add(Me.panelStudentInfo)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelOffenseCard)
+        Me.Controls.Add(Me.panelStudentCard)
+        Me.Controls.Add(Me.panelHeader)
         Me.Name = "UcLogOffense"
-        Me.Size = New System.Drawing.Size(920, 635)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.panelStudentInfo.ResumeLayout(False)
-        Me.panelStudentInfo.PerformLayout()
-        Me.panelOffenseDetails.ResumeLayout(False)
-        Me.panelOffenseDetails.PerformLayout()
+        Me.Size = New System.Drawing.Size(1120, 768)
+        Me.panelHeader.ResumeLayout(False)
+        Me.panelHeader.PerformLayout()
+        Me.panelStudentCard.ResumeLayout(False)
+        Me.panelStudentCard.PerformLayout()
+        Me.panelOffenseCard.ResumeLayout(False)
+        Me.panelOffenseCard.PerformLayout()
+        Me.panelProofBox.ResumeLayout(False)
+        Me.panelProofBox.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents lblTitle As Label
-    Friend WithEvents panelStudentInfo As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents lblStudentID As Label
-    Friend WithEvents panelOffenseDetails As Panel
-    Friend WithEvents txtStudentID As TextBox
-    Friend WithEvents btnFindStudent As Button
+    Friend WithEvents panelHeader As Panel
     Friend WithEvents lblSubtitle As Label
-    Friend WithEvents txtFullName As TextBox
-    Friend WithEvents lblFullName As Label
+    Friend WithEvents lblTitle As Label
+    Friend WithEvents panelStudentCard As Panel
+    Friend WithEvents txtYearLevel As TextBox
     Friend WithEvents lblYearLevel As Label
-    Friend WithEvents cboDepartment As ComboBox
+    Friend WithEvents txtDepartment As TextBox
     Friend WithEvents lblDepartment As Label
-    Friend WithEvents cboYearLevel As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents dtpIncidentDate As DateTimePicker
-    Friend WithEvents Label4 As Label
-    Friend WithEvents cboOffenseCategory As ComboBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents dtpIncidentTime As DateTimePicker
-    Friend WithEvents Label5 As Label
-    Friend WithEvents rbMinor As RadioButton
-    Friend WithEvents Label6 As Label
-    Friend WithEvents cboSanction As ComboBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents rbMajor As RadioButton
-    Friend WithEvents txtNarrative As TextBox
-    Friend WithEvents Label8 As Label
+    Friend WithEvents txtMiddleName As TextBox
+    Friend WithEvents lblMiddleName As Label
+    Friend WithEvents txtFirstName As TextBox
+    Friend WithEvents lblFirstName As Label
+    Friend WithEvents txtLastName As TextBox
+    Friend WithEvents lblLastName As Label
+    Friend WithEvents btnFindStudent As Button
+    Friend WithEvents txtStudentID As TextBox
+    Friend WithEvents lblStudentID As Label
+    Friend WithEvents lblStudentSectionTitle As Label
+    Friend WithEvents panelOffenseCard As Panel
+    Friend WithEvents btnSaveInfraction As Button
     Friend WithEvents btnClearForm As Button
-    Friend WithEvents btnSave As Button
+    Friend WithEvents panelProofBox As Panel
+    Friend WithEvents lstAttachments As ListBox
+    Friend WithEvents btnRemoveAttachment As Button
+    Friend WithEvents btnAttachFiles As Button
+    Friend WithEvents lblProofTitle As Label
+    Friend WithEvents txtRemarks As TextBox
+    Friend WithEvents lblRemarks As Label
+    Friend WithEvents cboSanction As ComboBox
+    Friend WithEvents lblSanction As Label
+    Friend WithEvents txtCustomOffense As TextBox
+    Friend WithEvents lblCustomOffense As Label
+    Friend WithEvents cboSpecificOffense As ComboBox
+    Friend WithEvents lblSpecificOffense As Label
+    Friend WithEvents txtIncidentTime As TextBox
+    Friend WithEvents lblIncidentTime As Label
+    Friend WithEvents txtIncidentDate As TextBox
+    Friend WithEvents lblIncidentDate As Label
+    Friend WithEvents cboWarningLevel As ComboBox
+    Friend WithEvents lblWarningLevel As Label
+    Friend WithEvents cboCategory As ComboBox
+    Friend WithEvents lblCategory As Label
+    Friend WithEvents lblOffenseSectionTitle As Label
 End Class

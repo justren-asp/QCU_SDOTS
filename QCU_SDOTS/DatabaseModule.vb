@@ -1,13 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Module DatabaseModule
-
-    ' MySQL database connection string
-    Public connString As String = "Server=localhost;Database=qcu_sdots_db;Uid=root;Pwd=;"
-
-    ' Function to generate and return a new MySQL connection safely
     Public Function GetConnection() As MySqlConnection
-        Return New MySqlConnection(connString)
+        Dim connStr As String = "Server=localhost;Port=3306;Database=qcu_sdots_db;Uid=root;Pwd=;"
+        Return New MySqlConnection(connStr)
     End Function
-
 End Module

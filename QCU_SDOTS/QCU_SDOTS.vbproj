@@ -157,10 +157,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UcClearanceGenerator.Designer.vb">
+      <DependentUpon>UcClearanceGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UcClearanceGenerator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UcLogOffense.Designer.vb">
       <DependentUpon>UcLogOffense.vb</DependentUpon>
     </Compile>
     <Compile Include="UcLogOffense.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSanctionTracker.Designer.vb">
+      <DependentUpon>UcSanctionTracker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UcSanctionTracker.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSearchRecords.Designer.vb">
+      <DependentUpon>UcSearchRecords.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UcSearchRecords.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -179,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcLogOffense.resx">
       <DependentUpon>UcLogOffense.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcSanctionTracker.resx">
+      <DependentUpon>UcSanctionTracker.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
