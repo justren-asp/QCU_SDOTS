@@ -1,139 +1,135 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
-Public Class LoginForm
+Partial Public Class LoginForm
 
-    Private baseTops As New Dictionary(Of Control, Integer)()
-    Private baseBottomOffsets As New Dictionary(Of Control, Integer)()
-    Private layoutInitialized As Boolean = False
+    Private ReadOnly RememberFilePath As String = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+        "QCU_SDOTS",
+        "remember_user.txt"
+    )
 
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
-        Me.BackColor = Color.White
-        txtPassword.UseSystemPasswordChar = True
-
-        CaptureLayoutBaselines()
-        ApplyCenterSplitAlignment()
+        Me.AcceptButton = btnLogin
+        lblStatusMessage.Text = ""
+        ConfigurePhotoOverlay()
+        LoadRememberedUser()
     End Sub
 
-    Private Sub LoginForm_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        ApplyCenterSplitAlignment()
+    Private Sub ConfigurePhotoOverlay()
+        lblQuoteText.Parent = picCampusBg
+        lblQuoteOffice.Parent = picCampusBg
+        panelAccentBar.Parent = picCampusBg
+        lblQuoteText.BackColor = Color.Transparent
+        lblQuoteOffice.BackColor = Color.Transparent
+        lblQuoteText.ForeColor = Color.White
+        lblQuoteOffice.ForeColor = Color.FromArgb(241, 245, 249)
+        panelAccentBar.BackColor = Color.FromArgb(245, 183, 0)
     End Sub
 
-    Private Sub CaptureLayoutBaselines()
-        If layoutInitialized Then Return
-
-        Dim leftControls As Control() = {
-            PictureBox1, Label2, Label3, Label4, txtUsername,
-            Label5, txtPassword, chkShowPassword, btnLogin, Panel1, Label6
-        }
-
-        For Each ctrl In leftControls
-            If ctrl IsNot Nothing Then
-                baseTops(ctrl) = ctrl.Top
-            End If
-        Next
-
-        If panelBanner IsNot Nothing Then
-            For Each bannerCtrl As Control In New Control() {Panel2, Label1, Label8}
-                If bannerCtrl IsNot Nothing Then
-                    baseBottomOffsets(bannerCtrl) = panelBanner.Height - bannerCtrl.Top
+    Private Sub LoadRememberedUser()
+        Try
+            If File.Exists(RememberFilePath) Then
+                Dim savedUser As String = File.ReadAllText(RememberFilePath).Trim()
+                If savedUser <> "" Then
+                    txtUsername.Text = savedUser
+                    chkRememberMe.Checked = True
+                    txtPassword.Focus()
+                    Return
                 End If
-            Next
-        End If
+            End If
+        Catch ex As Exception
+            System.Diagnostics.Debug.WriteLine("LoadRememberedUser error: " & ex.Message)
+        End Try
 
-        layoutInitialized = True
+        chkRememberMe.Checked = False
+        txtUsername.Focus()
     End Sub
 
-    Private Sub ApplyCenterSplitAlignment()
-        If Not layoutInitialized Then CaptureLayoutBaselines()
-        If Me.ClientSize.Width <= 0 OrElse Me.ClientSize.Height <= 0 Then Return
-
-        ' Split screen evenly at the center (left half = white column, right half = banner)
-        Dim leftWidth As Integer = Me.ClientSize.Width \ 2
-        Dim leftCenterX As Integer = leftWidth \ 2
-
-        Dim groupHeight As Integer = 450
-        Dim topStart As Integer = Math.Max(36, (Me.ClientSize.Height - groupHeight) \ 2)
-        Dim topShift As Integer = topStart - 110
-
-        For Each pair In baseTops
-            Dim ctrl As Control = pair.Key
-            If ctrl IsNot Nothing Then
-                ctrl.Top = pair.Value + topShift
-                ctrl.Left = leftCenterX - (ctrl.Width \ 2)
-            End If
-        Next
-
-        Dim fieldWidth As Integer = Math.Min(360, Math.Max(280, leftWidth - 140))
-        Dim fieldLeft As Integer = leftCenterX - (fieldWidth \ 2)
-
-        txtUsername.Width = fieldWidth
-        txtUsername.Left = fieldLeft
-
-        txtPassword.Width = fieldWidth
-        txtPassword.Left = fieldLeft
-
-        btnLogin.Width = fieldWidth
-        btnLogin.Left = fieldLeft
-
-        Panel1.Width = fieldWidth
-        Panel1.Left = fieldLeft
-
-        chkShowPassword.Left = fieldLeft
-        Label4.Left = fieldLeft
-        Label5.Left = fieldLeft
-
-        If panelBanner IsNot Nothing Then
-            panelBanner.Location = New Point(leftWidth, 0)
-            panelBanner.Size = New Size(Me.ClientSize.Width - leftWidth, Me.ClientSize.Height)
-
-            For Each pair In baseBottomOffsets
-                Dim bCtrl As Control = pair.Key
-                If bCtrl IsNot Nothing Then
-                    bCtrl.Left = 40
-                    bCtrl.Top = Math.Max(40, panelBanner.Height - pair.Value)
+    Private Sub SaveOrClearRememberedUser(username As String)
+        Try
+            Dim folderPath As String = Path.GetDirectoryName(RememberFilePath)
+            If chkRememberMe.Checked Then
+                If Not Directory.Exists(folderPath) Then
+                    Directory.CreateDirectory(folderPath)
                 End If
-            Next
+                File.WriteAllText(RememberFilePath, username.Trim())
+            Else
+                If File.Exists(RememberFilePath) Then
+                    File.Delete(RememberFilePath)
+                End If
+            End If
+        Catch ex As Exception
+            System.Diagnostics.Debug.WriteLine("SaveOrClearRememberedUser error: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub InputBox_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown, txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            btnLogin.PerformClick()
         End If
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim username As String = txtUsername.Text.Trim()
-        Dim password As String = txtPassword.Text.Trim()
+        lblStatusMessage.Text = ""
 
-        If username = "" OrElse password = "" Then
-            MessageBox.Show("Please enter both username and password.")
+        Dim usernameInput As String = txtUsername.Text.Trim()
+        Dim passwordInput As String = txtPassword.Text
+
+        If usernameInput = "" Then
+            lblStatusMessage.Text = "Please enter your Username / User ID."
+            txtUsername.Focus()
+            Return
+        End If
+
+        If passwordInput = "" Then
+            lblStatusMessage.Text = "Please enter your password."
+            txtPassword.Focus()
             Return
         End If
 
         Try
             Using conn As MySqlConnection = GetConnection()
                 conn.Open()
-                Dim sql As String = "SELECT user_id, role FROM users WHERE username = @user AND password = @pass LIMIT 1"
+
+                Dim sql As String = "SELECT user_id, username, full_name, role, is_active " &
+                                     "FROM users " &
+                                     "WHERE username = @user AND password_hash = @pass LIMIT 1"
+
                 Using cmd As New MySqlCommand(sql, conn)
-                    cmd.Parameters.AddWithValue("@user", username)
-                    cmd.Parameters.AddWithValue("@pass", password)
+                    cmd.Parameters.AddWithValue("@user", usernameInput)
+                    cmd.Parameters.AddWithValue("@pass", passwordInput)
 
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
                         If reader.Read() Then
-                            Dim dash As New MainDashboardForm()
-                            dash.Show()
+                            Dim isActive As Integer = If(IsDBNull(reader("is_active")), 1, Convert.ToInt32(reader("is_active")))
+                            If isActive = 0 Then
+                                lblStatusMessage.Text = "This account is inactive. Contact the administrator."
+                                Return
+                            End If
+
+                            Dim fullName As String = Convert.ToString(reader("full_name"))
+                            Dim roleName As String = Convert.ToString(reader("role"))
+                            Dim loggedUser As String = Convert.ToString(reader("username"))
+
+                            SaveOrClearRememberedUser(loggedUser)
+
+                            Dim dashboard As New MainDashboardForm()
+                            dashboard.lblLoggedUser.Text = $"{fullName} ({roleName})"
+                            dashboard.Show()
                             Me.Hide()
                         Else
-                            MessageBox.Show("Invalid username or password.")
+                            lblStatusMessage.Text = "Invalid username or password."
+                            txtPassword.SelectAll()
+                            txtPassword.Focus()
                         End If
                     End Using
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show("Login error: " & ex.Message)
+            lblStatusMessage.Text = "Database connection failed: " & ex.Message
         End Try
-    End Sub
-
-    Private Sub LoginForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        If Application.OpenForms.Count = 0 Then
-            Application.Exit()
-        End If
     End Sub
 
 End Class

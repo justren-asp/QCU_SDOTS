@@ -20,32 +20,31 @@ Partial Class UcSearchRecords
         Me.panelHeader = New System.Windows.Forms.Panel()
         Me.lblSubtitle = New System.Windows.Forms.Label()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.panelFilters = New System.Windows.Forms.Panel()
-        Me.btnSearchRecords = New System.Windows.Forms.Button()
-        Me.cboDateRange = New System.Windows.Forms.ComboBox()
-        Me.lblDateRange = New System.Windows.Forms.Label()
-        Me.cboSeverity = New System.Windows.Forms.ComboBox()
-        Me.lblSeverity = New System.Windows.Forms.Label()
-        Me.cboDepartment = New System.Windows.Forms.ComboBox()
-        Me.lblDepartment = New System.Windows.Forms.Label()
-        Me.txtSearchKeyword = New System.Windows.Forms.TextBox()
-        Me.lblSearchKeyword = New System.Windows.Forms.Label()
+        Me.panelFilterCard = New System.Windows.Forms.Panel()
         Me.lblFilterSectionTitle = New System.Windows.Forms.Label()
-        Me.panelTableCard = New System.Windows.Forms.Panel()
+        Me.lblSearchQuery = New System.Windows.Forms.Label()
+        Me.txtSearchQuery = New System.Windows.Forms.TextBox()
+        Me.lblFilterCategory = New System.Windows.Forms.Label()
+        Me.cboFilterCategory = New System.Windows.Forms.ComboBox()
+        Me.lblFilterStatus = New System.Windows.Forms.Label()
+        Me.cboFilterStatus = New System.Windows.Forms.ComboBox()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.btnResetFilters = New System.Windows.Forms.Button()
+        Me.panelResultsCard = New System.Windows.Forms.Panel()
+        Me.lblResultsTitle = New System.Windows.Forms.Label()
+        Me.lblResultCount = New System.Windows.Forms.Label()
         Me.dgvRecords = New System.Windows.Forms.DataGridView()
-        Me.colRecordID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colLogID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStudentID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStudentName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colDepartment = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colOffense = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colSeverity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDateLogged = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colAction = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.lblTableTitle = New System.Windows.Forms.Label()
+        Me.colOffenseType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colWarningLevel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colIncidentDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSanctionStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.panelHeader.SuspendLayout()
-        Me.panelFilters.SuspendLayout()
-        Me.panelTableCard.SuspendLayout()
+        Me.panelFilterCard.SuspendLayout()
+        Me.panelResultsCard.SuspendLayout()
         CType(Me.dgvRecords, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,182 +56,199 @@ Partial Class UcSearchRecords
         Me.panelHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelHeader.Location = New System.Drawing.Point(0, 0)
         Me.panelHeader.Name = "panelHeader"
-        Me.panelHeader.Size = New System.Drawing.Size(1100, 78)
+        Me.panelHeader.Size = New System.Drawing.Size(1180, 74)
         Me.panelHeader.TabIndex = 0
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lblTitle.Location = New System.Drawing.Point(24, 12)
+        Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42)
+        Me.lblTitle.Location = New System.Drawing.Point(24, 10)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(316, 30)
+        Me.lblTitle.Size = New System.Drawing.Size(274, 30)
         Me.lblTitle.TabIndex = 0
-        Me.lblTitle.Text = "Search Student Offense Records"
+        Me.lblTitle.Text = "Search Disciplinary Records"
+        Me.lblTitle.UseMnemonic = False
         '
         'lblSubtitle
         '
         Me.lblSubtitle.AutoSize = True
-        Me.lblSubtitle.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.lblSubtitle.ForeColor = System.Drawing.Color.DimGray
-        Me.lblSubtitle.Location = New System.Drawing.Point(24, 46)
+        Me.lblSubtitle.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Regular)
+        Me.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139)
+        Me.lblSubtitle.Location = New System.Drawing.Point(24, 44)
         Me.lblSubtitle.Name = "lblSubtitle"
-        Me.lblSubtitle.Size = New System.Drawing.Size(498, 19)
+        Me.lblSubtitle.Size = New System.Drawing.Size(514, 17)
         Me.lblSubtitle.TabIndex = 1
-        Me.lblSubtitle.Text = "Search and filter disciplinary records by student ID, name, department, severity, and date range."
+        Me.lblSubtitle.Text = "Search logged student infractions by ID, name, department, offense, or sanction status."
         '
-        'panelFilters
+        'panelFilterCard
         '
-        Me.panelFilters.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.panelFilterCard.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panelFilters.BackColor = System.Drawing.Color.White
-        Me.panelFilters.Controls.Add(Me.btnSearchRecords)
-        Me.panelFilters.Controls.Add(Me.cboDateRange)
-        Me.panelFilters.Controls.Add(Me.lblDateRange)
-        Me.panelFilters.Controls.Add(Me.cboSeverity)
-        Me.panelFilters.Controls.Add(Me.lblSeverity)
-        Me.panelFilters.Controls.Add(Me.cboDepartment)
-        Me.panelFilters.Controls.Add(Me.lblDepartment)
-        Me.panelFilters.Controls.Add(Me.txtSearchKeyword)
-        Me.panelFilters.Controls.Add(Me.lblSearchKeyword)
-        Me.panelFilters.Controls.Add(Me.lblFilterSectionTitle)
-        Me.panelFilters.Location = New System.Drawing.Point(24, 96)
-        Me.panelFilters.Name = "panelFilters"
-        Me.panelFilters.Size = New System.Drawing.Size(1052, 112)
-        Me.panelFilters.TabIndex = 1
+        Me.panelFilterCard.BackColor = System.Drawing.Color.White
+        Me.panelFilterCard.Controls.Add(Me.btnResetFilters)
+        Me.panelFilterCard.Controls.Add(Me.btnSearch)
+        Me.panelFilterCard.Controls.Add(Me.cboFilterStatus)
+        Me.panelFilterCard.Controls.Add(Me.lblFilterStatus)
+        Me.panelFilterCard.Controls.Add(Me.cboFilterCategory)
+        Me.panelFilterCard.Controls.Add(Me.lblFilterCategory)
+        Me.panelFilterCard.Controls.Add(Me.txtSearchQuery)
+        Me.panelFilterCard.Controls.Add(Me.lblSearchQuery)
+        Me.panelFilterCard.Controls.Add(Me.lblFilterSectionTitle)
+        Me.panelFilterCard.Location = New System.Drawing.Point(24, 88)
+        Me.panelFilterCard.Name = "panelFilterCard"
+        Me.panelFilterCard.Size = New System.Drawing.Size(1132, 104)
+        Me.panelFilterCard.TabIndex = 1
         '
         'lblFilterSectionTitle
         '
         Me.lblFilterSectionTitle.AutoSize = True
         Me.lblFilterSectionTitle.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Bold)
-        Me.lblFilterSectionTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.lblFilterSectionTitle.Location = New System.Drawing.Point(18, 12)
+        Me.lblFilterSectionTitle.ForeColor = System.Drawing.Color.FromArgb(24, 43, 92)
+        Me.lblFilterSectionTitle.Location = New System.Drawing.Point(18, 10)
         Me.lblFilterSectionTitle.Name = "lblFilterSectionTitle"
-        Me.lblFilterSectionTitle.Size = New System.Drawing.Size(123, 19)
+        Me.lblFilterSectionTitle.Size = New System.Drawing.Size(118, 19)
         Me.lblFilterSectionTitle.TabIndex = 0
-        Me.lblFilterSectionTitle.Text = "Search & Filter Criteria"
+        Me.lblFilterSectionTitle.Text = "Search & Filters"
         '
-        'lblSearchKeyword
+        'lblSearchQuery
         '
-        Me.lblSearchKeyword.AutoSize = True
-        Me.lblSearchKeyword.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblSearchKeyword.ForeColor = System.Drawing.Color.DimGray
-        Me.lblSearchKeyword.Location = New System.Drawing.Point(18, 40)
-        Me.lblSearchKeyword.Name = "lblSearchKeyword"
-        Me.lblSearchKeyword.Size = New System.Drawing.Size(142, 15)
-        Me.lblSearchKeyword.TabIndex = 1
-        Me.lblSearchKeyword.Text = "Student ID or Last Name"
+        Me.lblSearchQuery.AutoSize = True
+        Me.lblSearchQuery.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.lblSearchQuery.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85)
+        Me.lblSearchQuery.Location = New System.Drawing.Point(18, 36)
+        Me.lblSearchQuery.Name = "lblSearchQuery"
+        Me.lblSearchQuery.Size = New System.Drawing.Size(166, 17)
+        Me.lblSearchQuery.TabIndex = 1
+        Me.lblSearchQuery.Text = "Student ID, Name, or Keyword"
         '
-        'txtSearchKeyword
+        'txtSearchQuery
         '
-        Me.txtSearchKeyword.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.txtSearchKeyword.Location = New System.Drawing.Point(18, 60)
-        Me.txtSearchKeyword.Name = "txtSearchKeyword"
-        Me.txtSearchKeyword.Size = New System.Drawing.Size(215, 25)
-        Me.txtSearchKeyword.TabIndex = 2
+        Me.txtSearchQuery.BackColor = System.Drawing.Color.FromArgb(248, 250, 252)
+        Me.txtSearchQuery.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Regular)
+        Me.txtSearchQuery.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42)
+        Me.txtSearchQuery.Location = New System.Drawing.Point(18, 57)
+        Me.txtSearchQuery.Name = "txtSearchQuery"
+        Me.txtSearchQuery.Size = New System.Drawing.Size(372, 25)
+        Me.txtSearchQuery.TabIndex = 2
         '
-        'lblDepartment
+        'lblFilterCategory
         '
-        Me.lblDepartment.AutoSize = True
-        Me.lblDepartment.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblDepartment.ForeColor = System.Drawing.Color.DimGray
-        Me.lblDepartment.Location = New System.Drawing.Point(248, 40)
-        Me.lblDepartment.Name = "lblDepartment"
-        Me.lblDepartment.Size = New System.Drawing.Size(75, 15)
-        Me.lblDepartment.TabIndex = 3
-        Me.lblDepartment.Text = "Department"
+        Me.lblFilterCategory.AutoSize = True
+        Me.lblFilterCategory.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.lblFilterCategory.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85)
+        Me.lblFilterCategory.Location = New System.Drawing.Point(404, 36)
+        Me.lblFilterCategory.Name = "lblFilterCategory"
+        Me.lblFilterCategory.Size = New System.Drawing.Size(119, 17)
+        Me.lblFilterCategory.TabIndex = 3
+        Me.lblFilterCategory.Text = "Offense Category"
         '
-        'cboDepartment
+        'cboFilterCategory
         '
-        Me.cboDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboDepartment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cboDepartment.FormattingEnabled = True
-        Me.cboDepartment.Location = New System.Drawing.Point(248, 60)
-        Me.cboDepartment.Name = "cboDepartment"
-        Me.cboDepartment.Size = New System.Drawing.Size(230, 25)
-        Me.cboDepartment.TabIndex = 4
+        Me.cboFilterCategory.BackColor = System.Drawing.Color.FromArgb(248, 250, 252)
+        Me.cboFilterCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboFilterCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboFilterCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboFilterCategory.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Regular)
+        Me.cboFilterCategory.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42)
+        Me.cboFilterCategory.FormattingEnabled = True
+        Me.cboFilterCategory.ItemHeight = 28
+        Me.cboFilterCategory.Location = New System.Drawing.Point(404, 54)
+        Me.cboFilterCategory.Name = "cboFilterCategory"
+        Me.cboFilterCategory.Size = New System.Drawing.Size(196, 34)
+        Me.cboFilterCategory.TabIndex = 4
         '
-        'lblSeverity
+        'lblFilterStatus
         '
-        Me.lblSeverity.AutoSize = True
-        Me.lblSeverity.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblSeverity.ForeColor = System.Drawing.Color.DimGray
-        Me.lblSeverity.Location = New System.Drawing.Point(493, 40)
-        Me.lblSeverity.Name = "lblSeverity"
-        Me.lblSeverity.Size = New System.Drawing.Size(102, 15)
-        Me.lblSeverity.TabIndex = 5
-        Me.lblSeverity.Text = "Offense Severity"
+        Me.lblFilterStatus.AutoSize = True
+        Me.lblFilterStatus.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.lblFilterStatus.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85)
+        Me.lblFilterStatus.Location = New System.Drawing.Point(614, 36)
+        Me.lblFilterStatus.Name = "lblFilterStatus"
+        Me.lblFilterStatus.Size = New System.Drawing.Size(106, 17)
+        Me.lblFilterStatus.TabIndex = 5
+        Me.lblFilterStatus.Text = "Sanction Status"
         '
-        'cboSeverity
+        'cboFilterStatus
         '
-        Me.cboSeverity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboSeverity.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cboSeverity.FormattingEnabled = True
-        Me.cboSeverity.Location = New System.Drawing.Point(493, 60)
-        Me.cboSeverity.Name = "cboSeverity"
-        Me.cboSeverity.Size = New System.Drawing.Size(165, 25)
-        Me.cboSeverity.TabIndex = 6
+        Me.cboFilterStatus.BackColor = System.Drawing.Color.FromArgb(248, 250, 252)
+        Me.cboFilterStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboFilterStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboFilterStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboFilterStatus.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Regular)
+        Me.cboFilterStatus.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42)
+        Me.cboFilterStatus.FormattingEnabled = True
+        Me.cboFilterStatus.ItemHeight = 28
+        Me.cboFilterStatus.Location = New System.Drawing.Point(614, 54)
+        Me.cboFilterStatus.Name = "cboFilterStatus"
+        Me.cboFilterStatus.Size = New System.Drawing.Size(196, 34)
+        Me.cboFilterStatus.TabIndex = 6
         '
-        'lblDateRange
+        'btnSearch
         '
-        Me.lblDateRange.AutoSize = True
-        Me.lblDateRange.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblDateRange.ForeColor = System.Drawing.Color.DimGray
-        Me.lblDateRange.Location = New System.Drawing.Point(673, 40)
-        Me.lblDateRange.Name = "lblDateRange"
-        Me.lblDateRange.Size = New System.Drawing.Size(72, 15)
-        Me.lblDateRange.TabIndex = 7
-        Me.lblDateRange.Text = "Date Range"
+        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(29, 63, 158)
+        Me.btnSearch.FlatAppearance.BorderSize = 0
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearch.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnSearch.ForeColor = System.Drawing.Color.White
+        Me.btnSearch.Location = New System.Drawing.Point(826, 54)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(134, 34)
+        Me.btnSearch.TabIndex = 7
+        Me.btnSearch.Text = "Search Records"
+        Me.btnSearch.UseVisualStyleBackColor = False
         '
-        'cboDateRange
+        'btnResetFilters
         '
-        Me.cboDateRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboDateRange.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cboDateRange.FormattingEnabled = True
-        Me.cboDateRange.Location = New System.Drawing.Point(673, 60)
-        Me.cboDateRange.Name = "cboDateRange"
-        Me.cboDateRange.Size = New System.Drawing.Size(175, 25)
-        Me.cboDateRange.TabIndex = 8
+        Me.btnResetFilters.BackColor = System.Drawing.Color.FromArgb(226, 232, 240)
+        Me.btnResetFilters.FlatAppearance.BorderSize = 0
+        Me.btnResetFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnResetFilters.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnResetFilters.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59)
+        Me.btnResetFilters.Location = New System.Drawing.Point(968, 54)
+        Me.btnResetFilters.Name = "btnResetFilters"
+        Me.btnResetFilters.Size = New System.Drawing.Size(146, 34)
+        Me.btnResetFilters.TabIndex = 8
+        Me.btnResetFilters.Text = "Reset Filters"
+        Me.btnResetFilters.UseVisualStyleBackColor = False
         '
-        'btnSearchRecords
+        'panelResultsCard
         '
-        Me.btnSearchRecords.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSearchRecords.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.btnSearchRecords.FlatAppearance.BorderSize = 0
-        Me.btnSearchRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchRecords.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSearchRecords.ForeColor = System.Drawing.Color.White
-        Me.btnSearchRecords.Location = New System.Drawing.Point(892, 56)
-        Me.btnSearchRecords.Name = "btnSearchRecords"
-        Me.btnSearchRecords.Size = New System.Drawing.Size(140, 32)
-        Me.btnSearchRecords.TabIndex = 9
-        Me.btnSearchRecords.Text = "Search Records"
-        Me.btnSearchRecords.UseVisualStyleBackColor = False
-        '
-        'panelTableCard
-        '
-        Me.panelTableCard.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.panelResultsCard.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panelTableCard.BackColor = System.Drawing.Color.White
-        Me.panelTableCard.Controls.Add(Me.dgvRecords)
-        Me.panelTableCard.Controls.Add(Me.lblTableTitle)
-        Me.panelTableCard.Location = New System.Drawing.Point(24, 224)
-        Me.panelTableCard.Name = "panelTableCard"
-        Me.panelTableCard.Size = New System.Drawing.Size(1052, 520)
-        Me.panelTableCard.TabIndex = 2
+        Me.panelResultsCard.BackColor = System.Drawing.Color.White
+        Me.panelResultsCard.Controls.Add(Me.dgvRecords)
+        Me.panelResultsCard.Controls.Add(Me.lblResultCount)
+        Me.panelResultsCard.Controls.Add(Me.lblResultsTitle)
+        Me.panelResultsCard.Location = New System.Drawing.Point(24, 204)
+        Me.panelResultsCard.Name = "panelResultsCard"
+        Me.panelResultsCard.Size = New System.Drawing.Size(1132, 540)
+        Me.panelResultsCard.TabIndex = 2
         '
-        'lblTableTitle
+        'lblResultsTitle
         '
-        Me.lblTableTitle.AutoSize = True
-        Me.lblTableTitle.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Bold)
-        Me.lblTableTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.lblTableTitle.Location = New System.Drawing.Point(18, 14)
-        Me.lblTableTitle.Name = "lblTableTitle"
-        Me.lblTableTitle.Size = New System.Drawing.Size(156, 19)
-        Me.lblTableTitle.TabIndex = 0
-        Me.lblTableTitle.Text = "Infraction Records Table"
+        Me.lblResultsTitle.AutoSize = True
+        Me.lblResultsTitle.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Bold)
+        Me.lblResultsTitle.ForeColor = System.Drawing.Color.FromArgb(24, 43, 92)
+        Me.lblResultsTitle.Location = New System.Drawing.Point(18, 12)
+        Me.lblResultsTitle.Name = "lblResultsTitle"
+        Me.lblResultsTitle.Size = New System.Drawing.Size(172, 19)
+        Me.lblResultsTitle.TabIndex = 0
+        Me.lblResultsTitle.Text = "Disciplinary Record Results"
+        '
+        'lblResultCount
+        '
+        Me.lblResultCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblResultCount.AutoSize = True
+        Me.lblResultCount.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.lblResultCount.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139)
+        Me.lblResultCount.Location = New System.Drawing.Point(1018, 14)
+        Me.lblResultCount.Name = "lblResultCount"
+        Me.lblResultCount.Size = New System.Drawing.Size(96, 17)
+        Me.lblResultCount.TabIndex = 1
+        Me.lblResultCount.Text = "0 records found"
         '
         'dgvRecords
         '
@@ -244,90 +260,87 @@ Partial Class UcSearchRecords
         Me.dgvRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvRecords.BackgroundColor = System.Drawing.Color.White
         Me.dgvRecords.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRecords.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colRecordID, Me.colStudentID, Me.colStudentName, Me.colDepartment, Me.colOffense, Me.colSeverity, Me.colDateLogged, Me.colStatus, Me.colAction})
-        Me.dgvRecords.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.dgvRecords.Location = New System.Drawing.Point(18, 44)
+        Me.dgvRecords.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvRecords.ColumnHeadersHeight = 36
+        Me.dgvRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvRecords.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colLogID, Me.colStudentID, Me.colStudentName, Me.colDepartment, Me.colOffenseType, Me.colWarningLevel, Me.colIncidentDate, Me.colSanctionStatus})
+        Me.dgvRecords.EnableHeadersVisualStyles = False
+        Me.dgvRecords.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Regular)
+        Me.dgvRecords.GridColor = System.Drawing.Color.FromArgb(241, 245, 249)
+        Me.dgvRecords.Location = New System.Drawing.Point(18, 42)
         Me.dgvRecords.Name = "dgvRecords"
         Me.dgvRecords.ReadOnly = True
         Me.dgvRecords.RowHeadersVisible = False
         Me.dgvRecords.RowTemplate.Height = 34
         Me.dgvRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvRecords.Size = New System.Drawing.Size(1016, 458)
-        Me.dgvRecords.TabIndex = 1
+        Me.dgvRecords.Size = New System.Drawing.Size(1096, 480)
+        Me.dgvRecords.TabIndex = 2
         '
-        'colRecordID
+        'colLogID
         '
-        Me.colRecordID.FillWeight = 80.0!
-        Me.colRecordID.HeaderText = "Record ID"
-        Me.colRecordID.Name = "colRecordID"
+        Me.colLogID.HeaderText = "Log ID"
+        Me.colLogID.Name = "colLogID"
+        Me.colLogID.Visible = False
         '
         'colStudentID
         '
-        Me.colStudentID.FillWeight = 85.0!
+        Me.colStudentID.FillWeight = 90.0!
         Me.colStudentID.HeaderText = "Student ID"
         Me.colStudentID.Name = "colStudentID"
         '
         'colStudentName
         '
-        Me.colStudentName.FillWeight = 135.0!
+        Me.colStudentName.FillWeight = 140.0!
         Me.colStudentName.HeaderText = "Student Name"
         Me.colStudentName.Name = "colStudentName"
         '
         'colDepartment
         '
-        Me.colDepartment.FillWeight = 140.0!
+        Me.colDepartment.FillWeight = 135.0!
         Me.colDepartment.HeaderText = "Department"
         Me.colDepartment.Name = "colDepartment"
         '
-        'colOffense
+        'colOffenseType
         '
-        Me.colOffense.FillWeight = 185.0!
-        Me.colOffense.HeaderText = "Offense / Violation"
-        Me.colOffense.Name = "colOffense"
+        Me.colOffenseType.FillWeight = 175.0!
+        Me.colOffenseType.HeaderText = "Offense"
+        Me.colOffenseType.Name = "colOffenseType"
         '
-        'colSeverity
+        'colWarningLevel
         '
-        Me.colSeverity.FillWeight = 85.0!
-        Me.colSeverity.HeaderText = "Severity"
-        Me.colSeverity.Name = "colSeverity"
+        Me.colWarningLevel.FillWeight = 95.0!
+        Me.colWarningLevel.HeaderText = "Warning"
+        Me.colWarningLevel.Name = "colWarningLevel"
         '
-        'colDateLogged
+        'colIncidentDate
         '
-        Me.colDateLogged.FillWeight = 95.0!
-        Me.colDateLogged.HeaderText = "Date Logged"
-        Me.colDateLogged.Name = "colDateLogged"
+        Me.colIncidentDate.FillWeight = 95.0!
+        Me.colIncidentDate.HeaderText = "Incident Date"
+        Me.colIncidentDate.Name = "colIncidentDate"
         '
-        'colStatus
+        'colSanctionStatus
         '
-        Me.colStatus.FillWeight = 85.0!
-        Me.colStatus.HeaderText = "Status"
-        Me.colStatus.Name = "colStatus"
-        '
-        'colAction
-        '
-        Me.colAction.FillWeight = 70.0!
-        Me.colAction.HeaderText = "Action"
-        Me.colAction.Name = "colAction"
-        Me.colAction.Text = "View"
-        Me.colAction.UseColumnTextForButtonValue = True
+        Me.colSanctionStatus.FillWeight = 95.0!
+        Me.colSanctionStatus.HeaderText = "Status"
+        Me.colSanctionStatus.Name = "colSanctionStatus"
         '
         'UcSearchRecords
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(249, Byte), Integer))
-        Me.Controls.Add(Me.panelTableCard)
-        Me.Controls.Add(Me.panelFilters)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
+        Me.Controls.Add(Me.panelResultsCard)
+        Me.Controls.Add(Me.panelFilterCard)
         Me.Controls.Add(Me.panelHeader)
         Me.Name = "UcSearchRecords"
-        Me.Size = New System.Drawing.Size(1100, 768)
+        Me.Size = New System.Drawing.Size(1180, 768)
         Me.panelHeader.ResumeLayout(False)
         Me.panelHeader.PerformLayout()
-        Me.panelFilters.ResumeLayout(False)
-        Me.panelFilters.PerformLayout()
-        Me.panelTableCard.ResumeLayout(False)
-        Me.panelTableCard.PerformLayout()
+        Me.panelFilterCard.ResumeLayout(False)
+        Me.panelFilterCard.PerformLayout()
+        Me.panelResultsCard.ResumeLayout(False)
+        Me.panelResultsCard.PerformLayout()
         CType(Me.dgvRecords, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -336,27 +349,26 @@ Partial Class UcSearchRecords
     Friend WithEvents panelHeader As Panel
     Friend WithEvents lblSubtitle As Label
     Friend WithEvents lblTitle As Label
-    Friend WithEvents panelFilters As Panel
-    Friend WithEvents btnSearchRecords As Button
-    Friend WithEvents cboDateRange As ComboBox
-    Friend WithEvents lblDateRange As Label
-    Friend WithEvents cboSeverity As ComboBox
-    Friend WithEvents lblSeverity As Label
-    Friend WithEvents cboDepartment As ComboBox
-    Friend WithEvents lblDepartment As Label
-    Friend WithEvents txtSearchKeyword As TextBox
-    Friend WithEvents lblSearchKeyword As Label
+    Friend WithEvents panelFilterCard As Panel
     Friend WithEvents lblFilterSectionTitle As Label
-    Friend WithEvents panelTableCard As Panel
+    Friend WithEvents lblSearchQuery As Label
+    Friend WithEvents txtSearchQuery As TextBox
+    Friend WithEvents lblFilterCategory As Label
+    Friend WithEvents cboFilterCategory As ComboBox
+    Friend WithEvents lblFilterStatus As Label
+    Friend WithEvents cboFilterStatus As ComboBox
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents btnResetFilters As Button
+    Friend WithEvents panelResultsCard As Panel
+    Friend WithEvents lblResultsTitle As Label
+    Friend WithEvents lblResultCount As Label
     Friend WithEvents dgvRecords As DataGridView
-    Friend WithEvents colRecordID As DataGridViewTextBoxColumn
+    Friend WithEvents colLogID As DataGridViewTextBoxColumn
     Friend WithEvents colStudentID As DataGridViewTextBoxColumn
     Friend WithEvents colStudentName As DataGridViewTextBoxColumn
     Friend WithEvents colDepartment As DataGridViewTextBoxColumn
-    Friend WithEvents colOffense As DataGridViewTextBoxColumn
-    Friend WithEvents colSeverity As DataGridViewTextBoxColumn
-    Friend WithEvents colDateLogged As DataGridViewTextBoxColumn
-    Friend WithEvents colStatus As DataGridViewTextBoxColumn
-    Friend WithEvents colAction As DataGridViewButtonColumn
-    Friend WithEvents lblTableTitle As Label
+    Friend WithEvents colOffenseType As DataGridViewTextBoxColumn
+    Friend WithEvents colWarningLevel As DataGridViewTextBoxColumn
+    Friend WithEvents colIncidentDate As DataGridViewTextBoxColumn
+    Friend WithEvents colSanctionStatus As DataGridViewTextBoxColumn
 End Class

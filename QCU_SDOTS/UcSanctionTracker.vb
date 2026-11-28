@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Drawing
+Imports MySql.Data.MySqlClient
 
 Public Class UcSanctionTracker
 
@@ -7,9 +8,39 @@ Public Class UcSanctionTracker
     Private isUpdatingCheckboxes As Boolean = False
 
     Private Sub UcSanctionTracker_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblTitle.UseMnemonic = False
+        ConfigureGridAppearance()
+        SetServiceHoursVisible(False)
         EnsureSanctionColumnsExist()
         RefreshSanctionTracker()
     End Sub
+
+    Private Sub ConfigureGridAppearance()
+        dgvSanctions.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252)
+        dgvSanctions.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(51, 65, 85)
+        dgvSanctions.ColumnHeadersDefaultCellStyle.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
+        dgvSanctions.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(248, 250, 252)
+        dgvSanctions.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.FromArgb(51, 65, 85)
+
+        dgvSanctions.DefaultCellStyle.BackColor = Color.White
+        dgvSanctions.DefaultCellStyle.ForeColor = Color.FromArgb(15, 23, 42)
+        dgvSanctions.DefaultCellStyle.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Regular)
+        dgvSanctions.DefaultCellStyle.SelectionBackColor = Color.FromArgb(239, 246, 255)
+        dgvSanctions.DefaultCellStyle.SelectionForeColor = Color.FromArgb(15, 23, 42)
+    End Sub
+
+    Private Sub SetServiceHoursVisible(isVisible As Boolean)
+        lblServiceHours.Visible = isVisible
+        numServiceHours.Visible = isVisible
+        If Not isVisible Then
+            numServiceHours.Value = 0
+        End If
+    End Sub
+
+    Private Function IsCommunityServiceSanction(sanctionText As String) As Boolean
+        If String.IsNullOrWhiteSpace(sanctionText) Then Return False
+        Return sanctionText.IndexOf("community service", System.StringComparison.OrdinalIgnoreCase) >= 0
+    End Function
 
     ' Safely adds optional tracking columns if not yet present in sanctions table
     Private Sub EnsureSanctionColumnsExist()
@@ -119,6 +150,12 @@ Public Class UcSanctionTracker
 
                     If dgvSanctions.Rows.Count > 0 Then
                         PopulateUpdatePanelFromRow(dgvSanctions.Rows(0))
+                    Else
+                        selectedSanctionId = 0
+                        selectedLogId = 0
+                        txtSelectedStudentID.Clear()
+                        txtOfficerRemarks.Clear()
+                        SetServiceHoursVisible(False)
                     End If
                 End Using
             End Using
@@ -134,7 +171,7 @@ Public Class UcSanctionTracker
                 Case "Completed", "Cleared"
                     row.Cells("colStatusBadge").Style.ForeColor = Color.FromArgb(21, 128, 61)
                 Case "In-progress", "Pending"
-                    row.Cells("colStatusBadge").Style.ForeColor = Color.FromArgb(29, 78, 216)
+                    row.Cells("colStatusBadge").Style.ForeColor = Color.FromArgb(29, 63, 158)
                 Case "Escalated"
                     row.Cells("colStatusBadge").Style.ForeColor = Color.FromArgb(180, 83, 9)
                 Case "Overdue"
@@ -158,8 +195,10 @@ Public Class UcSanctionTracker
         selectedLogId = Convert.ToInt32(drv("log_id"))
 
         txtSelectedStudentID.Text = Convert.ToString(drv("student_id"))
-        numServiceHours.Value = 0
         txtOfficerRemarks.Text = Convert.ToString(drv("officer_remarks"))
+
+        Dim sanctionTypeText As String = Convert.ToString(drv("sanction_type"))
+        SetServiceHoursVisible(IsCommunityServiceSanction(sanctionTypeText))
 
         Dim rawStatus As String = Convert.ToString(drv("raw_status"))
 
@@ -199,7 +238,7 @@ Public Class UcSanctionTracker
             newStatus = "Pending"
         End If
 
-        Dim addedHours As Integer = CInt(numServiceHours.Value)
+        Dim addedHours As Integer = If(numServiceHours.Visible, CInt(numServiceHours.Value), 0)
         Dim remarksText As String = txtOfficerRemarks.Text.Trim()
 
         Try

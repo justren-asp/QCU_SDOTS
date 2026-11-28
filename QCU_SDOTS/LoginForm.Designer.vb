@@ -2,7 +2,6 @@
 Partial Class LoginForm
     Inherits System.Windows.Forms.Form
 
-    'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -14,251 +13,306 @@ Partial Class LoginForm
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
-    'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
-        Me.panelBanner = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.chkShowPassword = New System.Windows.Forms.CheckBox()
+        Me.tlpLoginSplit = New System.Windows.Forms.TableLayoutPanel()
+        Me.panelFormLeft = New System.Windows.Forms.Panel()
+        Me.panelFormCenter = New System.Windows.Forms.Panel()
+        Me.lblAuthNotice = New System.Windows.Forms.Label()
+        Me.lblStatusMessage = New System.Windows.Forms.Label()
         Me.btnLogin = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.panelBanner.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.chkRememberMe = New System.Windows.Forms.CheckBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.lblPassword = New System.Windows.Forms.Label()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.lblUsername = New System.Windows.Forms.Label()
+        Me.lblBrandSub = New System.Windows.Forms.Label()
+        Me.lblBrandName = New System.Windows.Forms.Label()
+        Me.picQcuLogo = New System.Windows.Forms.PictureBox()
+        Me.panelPhotoRight = New System.Windows.Forms.Panel()
+        Me.panelAccentBar = New System.Windows.Forms.Panel()
+        Me.lblQuoteOffice = New System.Windows.Forms.Label()
+        Me.lblQuoteText = New System.Windows.Forms.Label()
+        Me.picCampusBg = New System.Windows.Forms.PictureBox()
+        Me.tlpLoginSplit.SuspendLayout()
+        Me.panelFormLeft.SuspendLayout()
+        Me.panelFormCenter.SuspendLayout()
+        CType(Me.picQcuLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelPhotoRight.SuspendLayout()
+        CType(Me.picCampusBg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'panelBanner
+        'tlpLoginSplit
         '
-        Me.panelBanner.BackgroundImage = CType(resources.GetObject("panelBanner.BackgroundImage"), System.Drawing.Image)
-        Me.panelBanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.panelBanner.Controls.Add(Me.Label8)
-        Me.panelBanner.Controls.Add(Me.Panel2)
-        Me.panelBanner.Controls.Add(Me.Label1)
-        Me.panelBanner.Location = New System.Drawing.Point(520, 0)
-        Me.panelBanner.Name = "panelBanner"
-        Me.panelBanner.Size = New System.Drawing.Size(846, 768)
-        Me.panelBanner.TabIndex = 0
+        Me.tlpLoginSplit.ColumnCount = 2
+        Me.tlpLoginSplit.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.0!))
+        Me.tlpLoginSplit.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.0!))
+        Me.tlpLoginSplit.Controls.Add(Me.panelFormLeft, 0, 0)
+        Me.tlpLoginSplit.Controls.Add(Me.panelPhotoRight, 1, 0)
+        Me.tlpLoginSplit.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpLoginSplit.Location = New System.Drawing.Point(0, 0)
+        Me.tlpLoginSplit.Margin = New System.Windows.Forms.Padding(0)
+        Me.tlpLoginSplit.Name = "tlpLoginSplit"
+        Me.tlpLoginSplit.RowCount = 1
+        Me.tlpLoginSplit.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpLoginSplit.Size = New System.Drawing.Size(1200, 720)
+        Me.tlpLoginSplit.TabIndex = 0
         '
-        'Panel2
+        'panelFormLeft
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Gold
-        Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Location = New System.Drawing.Point(40, 560)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(56, 6)
-        Me.Panel2.TabIndex = 1
+        Me.panelFormLeft.BackColor = System.Drawing.Color.White
+        Me.panelFormLeft.Controls.Add(Me.panelFormCenter)
+        Me.panelFormLeft.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelFormLeft.Location = New System.Drawing.Point(0, 0)
+        Me.panelFormLeft.Margin = New System.Windows.Forms.Padding(0)
+        Me.panelFormLeft.Name = "panelFormLeft"
+        Me.panelFormLeft.Size = New System.Drawing.Size(552, 720)
+        Me.panelFormLeft.TabIndex = 0
         '
-        'Label7
+        'panelFormCenter
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(0, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(0, 13)
-        Me.Label7.TabIndex = 0
+        Me.panelFormCenter.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.panelFormCenter.BackColor = System.Drawing.Color.White
+        Me.panelFormCenter.Controls.Add(Me.lblAuthNotice)
+        Me.panelFormCenter.Controls.Add(Me.lblStatusMessage)
+        Me.panelFormCenter.Controls.Add(Me.btnLogin)
+        Me.panelFormCenter.Controls.Add(Me.chkRememberMe)
+        Me.panelFormCenter.Controls.Add(Me.txtPassword)
+        Me.panelFormCenter.Controls.Add(Me.lblPassword)
+        Me.panelFormCenter.Controls.Add(Me.txtUsername)
+        Me.panelFormCenter.Controls.Add(Me.lblUsername)
+        Me.panelFormCenter.Controls.Add(Me.lblBrandSub)
+        Me.panelFormCenter.Controls.Add(Me.lblBrandName)
+        Me.panelFormCenter.Controls.Add(Me.picQcuLogo)
+        Me.panelFormCenter.Location = New System.Drawing.Point(96, 90)
+        Me.panelFormCenter.Name = "panelFormCenter"
+        Me.panelFormCenter.Size = New System.Drawing.Size(360, 540)
+        Me.panelFormCenter.TabIndex = 0
         '
-        'Label1
+        'lblAuthNotice
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(40, 576)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(420, 72)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Every report, tracked. Every action, accountable."
+        Me.lblAuthNotice.Font = New System.Drawing.Font("Segoe UI", 7.5!, System.Drawing.FontStyle.Bold)
+        Me.lblAuthNotice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(148, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.lblAuthNotice.Location = New System.Drawing.Point(0, 416)
+        Me.lblAuthNotice.Name = "lblAuthNotice"
+        Me.lblAuthNotice.Size = New System.Drawing.Size(360, 20)
+        Me.lblAuthNotice.TabIndex = 10
+        Me.lblAuthNotice.Text = "AUTHORIZED DISCIPLINE OFFICERS & ADMIN ONLY"
+        Me.lblAuthNotice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label8
+        'lblStatusMessage
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(40, 658)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(410, 25)
-        Me.Label8.TabIndex = 2
-        Me.Label8.Text = "QCU Office of Student Affairs and Discipline"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(224, 110)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(72, 72)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 21.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.ForeColor = System.Drawing.Color.Navy
-        Me.Label2.Location = New System.Drawing.Point(170, 192)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(180, 38)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "QCU SDOTS"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(108, 236)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(305, 19)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Student Disciplinary and Offense Tracking System"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.5!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(95, 285)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(135, 19)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Username / User ID"
-        '
-        'txtUsername
-        '
-        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 11.5!)
-        Me.txtUsername.Location = New System.Drawing.Point(95, 312)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(330, 28)
-        Me.txtUsername.TabIndex = 5
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.5!, System.Drawing.FontStyle.Bold)
-        Me.Label5.Location = New System.Drawing.Point(95, 355)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(72, 19)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Password"
-        '
-        'txtPassword
-        '
-        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 11.5!)
-        Me.txtPassword.Location = New System.Drawing.Point(95, 382)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(330, 28)
-        Me.txtPassword.TabIndex = 7
-        Me.txtPassword.UseSystemPasswordChar = True
-        '
-        'chkShowPassword
-        '
-        Me.chkShowPassword.AutoSize = True
-        Me.chkShowPassword.Font = New System.Drawing.Font("Segoe UI", 9.5!)
-        Me.chkShowPassword.Location = New System.Drawing.Point(95, 424)
-        Me.chkShowPassword.Name = "chkShowPassword"
-        Me.chkShowPassword.Size = New System.Drawing.Size(260, 21)
-        Me.chkShowPassword.TabIndex = 8
-        Me.chkShowPassword.Text = "Remember credentials on this machine"
-        Me.chkShowPassword.UseVisualStyleBackColor = True
+        Me.lblStatusMessage.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.lblStatusMessage.ForeColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.lblStatusMessage.Location = New System.Drawing.Point(12, 362)
+        Me.lblStatusMessage.Name = "lblStatusMessage"
+        Me.lblStatusMessage.Size = New System.Drawing.Size(336, 36)
+        Me.lblStatusMessage.TabIndex = 9
+        Me.lblStatusMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnLogin
         '
-        Me.btnLogin.BackColor = System.Drawing.Color.MediumBlue
+        Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.btnLogin.FlatAppearance.BorderSize = 0
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogin.Font = New System.Drawing.Font("Segoe UI Semibold", 12.5!, System.Drawing.FontStyle.Bold)
+        Me.btnLogin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnLogin.ForeColor = System.Drawing.Color.White
-        Me.btnLogin.Location = New System.Drawing.Point(95, 464)
+        Me.btnLogin.Location = New System.Drawing.Point(12, 318)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(330, 44)
-        Me.btnLogin.TabIndex = 9
+        Me.btnLogin.Size = New System.Drawing.Size(336, 36)
+        Me.btnLogin.TabIndex = 8
         Me.btnLogin.Text = "LOG IN"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
-        'Panel1
+        'chkRememberMe
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Silver
-        Me.Panel1.Location = New System.Drawing.Point(95, 528)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(330, 2)
-        Me.Panel1.TabIndex = 11
+        Me.chkRememberMe.AutoSize = True
+        Me.chkRememberMe.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.chkRememberMe.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.chkRememberMe.Location = New System.Drawing.Point(12, 284)
+        Me.chkRememberMe.Name = "chkRememberMe"
+        Me.chkRememberMe.Size = New System.Drawing.Size(232, 19)
+        Me.chkRememberMe.TabIndex = 7
+        Me.chkRememberMe.Text = "Remember credentials on this machine"
+        Me.chkRememberMe.UseVisualStyleBackColor = True
         '
-        'Label6
+        'txtPassword
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label6.ForeColor = System.Drawing.Color.DimGray
-        Me.Label6.Location = New System.Drawing.Point(104, 544)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(312, 15)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "AUTHORIZED DISCIPLINE OFFICERS AND ADMIN ONLY"
+        Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.txtPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.txtPassword.Location = New System.Drawing.Point(12, 248)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(336, 24)
+        Me.txtPassword.TabIndex = 6
+        Me.txtPassword.UseSystemPasswordChar = True
+        '
+        'lblPassword
+        '
+        Me.lblPassword.AutoSize = True
+        Me.lblPassword.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.lblPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.lblPassword.Location = New System.Drawing.Point(12, 230)
+        Me.lblPassword.Name = "lblPassword"
+        Me.lblPassword.Size = New System.Drawing.Size(59, 15)
+        Me.lblPassword.TabIndex = 5
+        Me.lblPassword.Text = "Password"
+        '
+        'txtUsername
+        '
+        Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.txtUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.txtUsername.Location = New System.Drawing.Point(12, 192)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(336, 24)
+        Me.txtUsername.TabIndex = 4
+        '
+        'lblUsername
+        '
+        Me.lblUsername.AutoSize = True
+        Me.lblUsername.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.lblUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.lblUsername.Location = New System.Drawing.Point(12, 174)
+        Me.lblUsername.Name = "lblUsername"
+        Me.lblUsername.Size = New System.Drawing.Size(117, 15)
+        Me.lblUsername.TabIndex = 3
+        Me.lblUsername.Text = "Username / User ID"
+        '
+        'lblBrandSub
+        '
+        Me.lblBrandSub.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.lblBrandSub.ForeColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(130, Byte), Integer), CType(CType(145, Byte), Integer))
+        Me.lblBrandSub.Location = New System.Drawing.Point(0, 134)
+        Me.lblBrandSub.Name = "lblBrandSub"
+        Me.lblBrandSub.Size = New System.Drawing.Size(360, 20)
+        Me.lblBrandSub.TabIndex = 2
+        Me.lblBrandSub.Text = "Student Disciplinary and Offense Tracking System"
+        Me.lblBrandSub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblBrandName
+        '
+        Me.lblBrandName.Font = New System.Drawing.Font("Segoe UI", 17.0!, System.Drawing.FontStyle.Bold)
+        Me.lblBrandName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.lblBrandName.Location = New System.Drawing.Point(0, 100)
+        Me.lblBrandName.Name = "lblBrandName"
+        Me.lblBrandName.Size = New System.Drawing.Size(360, 34)
+        Me.lblBrandName.TabIndex = 1
+        Me.lblBrandName.Text = "QCU SDOTS"
+        Me.lblBrandName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'picQcuLogo
+        '
+        Me.picQcuLogo.Image = Global.QCU_SDOTS.My.Resources.Resources.qcu_logo
+        Me.picQcuLogo.Location = New System.Drawing.Point(140, 12)
+        Me.picQcuLogo.Name = "picQcuLogo"
+        Me.picQcuLogo.Size = New System.Drawing.Size(80, 80)
+        Me.picQcuLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picQcuLogo.TabIndex = 0
+        Me.picQcuLogo.TabStop = False
+        '
+        'panelPhotoRight
+        '
+        Me.panelPhotoRight.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.panelPhotoRight.Controls.Add(Me.panelAccentBar)
+        Me.panelPhotoRight.Controls.Add(Me.lblQuoteOffice)
+        Me.panelPhotoRight.Controls.Add(Me.lblQuoteText)
+        Me.panelPhotoRight.Controls.Add(Me.picCampusBg)
+        Me.panelPhotoRight.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelPhotoRight.Location = New System.Drawing.Point(552, 0)
+        Me.panelPhotoRight.Margin = New System.Windows.Forms.Padding(0)
+        Me.panelPhotoRight.Name = "panelPhotoRight"
+        Me.panelPhotoRight.Size = New System.Drawing.Size(648, 720)
+        Me.panelPhotoRight.TabIndex = 1
+        '
+        'panelAccentBar
+        '
+        Me.panelAccentBar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.panelAccentBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.panelAccentBar.Location = New System.Drawing.Point(34, 534)
+        Me.panelAccentBar.Name = "panelAccentBar"
+        Me.panelAccentBar.Size = New System.Drawing.Size(44, 4)
+        Me.panelAccentBar.TabIndex = 3
+        '
+        'lblQuoteOffice
+        '
+        Me.lblQuoteOffice.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblQuoteOffice.AutoSize = True
+        Me.lblQuoteOffice.BackColor = System.Drawing.Color.Transparent
+        Me.lblQuoteOffice.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.lblQuoteOffice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.lblQuoteOffice.Location = New System.Drawing.Point(34, 634)
+        Me.lblQuoteOffice.Name = "lblQuoteOffice"
+        Me.lblQuoteOffice.Size = New System.Drawing.Size(263, 17)
+        Me.lblQuoteOffice.TabIndex = 2
+        Me.lblQuoteOffice.Text = "QCU Office of Student Affairs and Discipline"
+        '
+        'lblQuoteText
+        '
+        Me.lblQuoteText.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblQuoteText.BackColor = System.Drawing.Color.Transparent
+        Me.lblQuoteText.Font = New System.Drawing.Font("Segoe UI", 17.5!, System.Drawing.FontStyle.Bold)
+        Me.lblQuoteText.ForeColor = System.Drawing.Color.White
+        Me.lblQuoteText.Location = New System.Drawing.Point(34, 548)
+        Me.lblQuoteText.Name = "lblQuoteText"
+        Me.lblQuoteText.Size = New System.Drawing.Size(576, 78)
+        Me.lblQuoteText.TabIndex = 1
+        Me.lblQuoteText.Text = "Every report, tracked." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Every action, accountable."
+        '
+        'picCampusBg
+        '
+        Me.picCampusBg.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.picCampusBg.Image = Global.QCU_SDOTS.My.Resources.Resources.QCU_Image
+        Me.picCampusBg.Location = New System.Drawing.Point(0, 0)
+        Me.picCampusBg.Name = "picCampusBg"
+        Me.picCampusBg.Size = New System.Drawing.Size(648, 720)
+        Me.picCampusBg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCampusBg.TabIndex = 0
+        Me.picCampusBg.TabStop = False
         '
         'LoginForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AcceptButton = Me.btnLogin
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1366, 768)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.chkShowPassword)
-        Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtUsername)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.panelBanner)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.ClientSize = New System.Drawing.Size(1200, 720)
+        Me.Controls.Add(Me.tlpLoginSplit)
+        Me.MinimumSize = New System.Drawing.Size(960, 620)
         Me.Name = "LoginForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "QCU Student Disciplinary and Offense Tracking System [Log In]"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.panelBanner.ResumeLayout(False)
-        Me.panelBanner.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tlpLoginSplit.ResumeLayout(False)
+        Me.panelFormLeft.ResumeLayout(False)
+        Me.panelFormCenter.ResumeLayout(False)
+        Me.panelFormCenter.PerformLayout()
+        CType(Me.picQcuLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panelPhotoRight.ResumeLayout(False)
+        Me.panelPhotoRight.PerformLayout()
+        CType(Me.picCampusBg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents panelBanner As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txtUsername As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtPassword As TextBox
-    Friend WithEvents chkShowPassword As CheckBox
+    Friend WithEvents tlpLoginSplit As TableLayoutPanel
+    Friend WithEvents panelFormLeft As Panel
+    Friend WithEvents panelFormCenter As Panel
+    Friend WithEvents lblAuthNotice As Label
+    Friend WithEvents lblStatusMessage As Label
     Friend WithEvents btnLogin As Button
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents chkRememberMe As CheckBox
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents lblPassword As Label
+    Friend WithEvents txtUsername As TextBox
+    Friend WithEvents lblUsername As Label
+    Friend WithEvents lblBrandSub As Label
+    Friend WithEvents lblBrandName As Label
+    Friend WithEvents picQcuLogo As PictureBox
+    Friend WithEvents panelPhotoRight As Panel
+    Friend WithEvents panelAccentBar As Panel
+    Friend WithEvents lblQuoteOffice As Label
+    Friend WithEvents lblQuoteText As Label
+    Friend WithEvents picCampusBg As PictureBox
 End Class

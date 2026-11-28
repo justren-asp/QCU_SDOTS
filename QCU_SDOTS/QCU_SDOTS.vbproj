@@ -195,6 +195,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UcClearanceGenerator.resx">
+      <DependentUpon>UcClearanceGenerator.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UcLogOffense.resx">
       <DependentUpon>UcLogOffense.vb</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +217,12 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qcu_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QCU Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
